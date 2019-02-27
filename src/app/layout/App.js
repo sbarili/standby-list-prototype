@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 //import logo from './logo.svg';
 //import Counters from "./Components/counters";
-import Passengers from "../../components/Passengers";
-import NavBar from "../../components/navbar";
-import Seatmap from "../../components/SeatMap";
+import Passengers from "../../Components/Passengers";
+import NavBar from "../../Components/navbar";
+import Seatmap from "../../Components/SeatMap";
 import BootstrapTable from "react-bootstrap-table-next";
 
 import "react-bootstrap-table-next/dist/react-bootstrap-table2.min.css";
