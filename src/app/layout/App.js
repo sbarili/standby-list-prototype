@@ -15,7 +15,7 @@ class App extends Component {
     passengers: [
       {
         id: 1,
-        priorityList: 1,
+        //priorityList: 1,
         thruStatus: "THRU",
         bpIssued: false,
         priorityCode: "OS",
@@ -31,7 +31,7 @@ class App extends Component {
       },
       {
         id: 2,
-        priorityList: 2,
+        //priorityList: 2,
         thruStatus: "???",
         bpIssued: true,
         priorityCode: "OS",
@@ -47,7 +47,7 @@ class App extends Component {
       },
       {
         id: 3,
-        priorityList: 3,
+        //priorityList: 3,
         thruStatus: "???",
         bpIssued: true,
         priorityCode: "OS",
@@ -63,7 +63,7 @@ class App extends Component {
       },
       {
         id: 4,
-        priorityList: 4,
+        //priorityList: 4,
         thruStatus: "???",
         bpIssued: false,
         priorityCode: "VOL",
@@ -79,7 +79,7 @@ class App extends Component {
       },
       {
         id: 5,
-        priorityList: 5,
+        //priorityList: 5,
         thruStatus: "???",
         bpIssued: false,
         priorityCode: "VOL",
@@ -95,7 +95,7 @@ class App extends Component {
       },
       {
         id: 6,
-        priorityList: 6,
+        //priorityList: 6,
         thruStatus: "???",
         bpIssued: false,
         priorityCode: "VOL",
@@ -111,7 +111,7 @@ class App extends Component {
       },
       {
         id: 7,
-        priorityList: 7,
+        //priorityList: 7,
         thruStatus: "???",
         bpIssued: false,
         priorityCode: "VOL",
@@ -128,7 +128,7 @@ class App extends Component {
 
       {
         id: 8,
-        priorityList: 8,
+        //priorityList: 8,
         thruStatus: "???",
         bpIssued: false,
         priorityCode: "D1",
@@ -144,7 +144,7 @@ class App extends Component {
       },
       {
         id: 9,
-        priorityList: 9,
+        //priorityList: 9,
         thruStatus: "???",
         bpIssued: false,
         priorityCode: "D1",
@@ -160,7 +160,7 @@ class App extends Component {
       },
       {
         id: 10,
-        priorityList: 10,
+        //priorityList: 10,
         thruStatus: "???",
         bpIssued: false,
         priorityCode: "D2",
@@ -176,7 +176,7 @@ class App extends Component {
       },
       {
         id: 11,
-        priorityList: 11,
+        //priorityList: 11,
         thruStatus: "???",
         bpIssued: false,
         priorityCode: "D2",
@@ -192,7 +192,7 @@ class App extends Component {
       },
       {
         id: 12,
-        priorityList: 12,
+        //priorityList: 12,
         thruStatus: "???",
         bpIssued: false,
         priorityCode: "D2",
@@ -208,7 +208,7 @@ class App extends Component {
       },
       {
         id: 13,
-        priorityList: 13,
+        //priorityList: 13,
         thruStatus: "???",
         bpIssued: false,
         priorityCode: "D2",
@@ -224,7 +224,7 @@ class App extends Component {
       },
       {
         id: 14,
-        priorityList: 14,
+       // priorityList: 14,
         thruStatus: "???",
         bpIssued: false,
         priorityCode: "D2",
