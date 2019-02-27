@@ -1,28 +1,26 @@
 import React, { Component } from "react";
 //import logo from './logo.svg';
 //import Counters from "./Components/counters";
-import Passengers from "./Components/Passengers";
-import NavBar from "./Components/navbar";
+import Passengers from "../../components/Passengers";
+import NavBar from "../../components/navbar";
+import Seatmap from "../../components/SeatMap";
+import BootstrapTable from "react-bootstrap-table-next";
+
+import "react-bootstrap-table-next/dist/react-bootstrap-table2.min.css";
 //import Seatmap from "react-seatmap";
-import "./App.css";
+//import "./App.css";
 
 class App extends Component {
   state = {
-    counters: [
-      { id: 1, value: 0 },
-      { id: 2, value: 3 },
-      { id: 3, value: 1 },
-      { id: 4, value: 2 }
-    ],
     passengers: [
       {
         id: 1,
         priorityList: 1,
         thruStatus: "THRU",
         bpIssued: false,
-        priorityCode: "D2",
-        nameLast: "SHMULL MAYER",
-        nameFirst: "DAWN",
+        priorityCode: "OS",
+        nameLast: "SKYWALKER",
+        nameFirst: "LUKE",
         groupCode: "AB4",
         cabinBooked: "F",
         cabinDesired: "Y",
@@ -36,9 +34,9 @@ class App extends Component {
         priorityList: 2,
         thruStatus: "???",
         bpIssued: true,
-        priorityCode: "D2",
-        nameLast: "BARILI",
-        nameFirst: "SARAH",
+        priorityCode: "OS",
+        nameLast: "ORGANA",
+        nameFirst: "LEAH",
         groupCode: "AB4",
         cabinBooked: "F",
         cabinDesired: "Y",
@@ -52,10 +50,10 @@ class App extends Component {
         priorityList: 3,
         thruStatus: "???",
         bpIssued: true,
-        priorityCode: "D1",
-        nameLast: "GRAY",
-        nameFirst: "ROSALYNN",
-        groupCode: NaN,
+        priorityCode: "OS",
+        nameLast: "SOLO",
+        nameFirst: "HAN",
+        groupCode: "AB4",
         cabinBooked: "F",
         cabinDesired: "Y",
         destination: "TUS",
@@ -68,9 +66,9 @@ class App extends Component {
         priorityList: 4,
         thruStatus: "???",
         bpIssued: false,
-        priorityCode: "D1",
-        nameLast: "NGUYEN",
-        nameFirst: "TRACY",
+        priorityCode: "VOL",
+        nameLast: "VADER",
+        nameFirst: "DARTH",
         groupCode: NaN,
         cabinBooked: "F",
         cabinDesired: "J",
@@ -84,9 +82,9 @@ class App extends Component {
         priorityList: 5,
         thruStatus: "???",
         bpIssued: false,
-        priorityCode: "D1",
-        nameLast: "GRAY",
-        nameFirst: "ROSALYNN",
+        priorityCode: "VOL",
+        nameLast: "KENOBI",
+        nameFirst: "OBIWAN",
         groupCode: NaN,
         cabinBooked: "F",
         cabinDesired: "Y",
@@ -100,9 +98,9 @@ class App extends Component {
         priorityList: 6,
         thruStatus: "???",
         bpIssued: false,
-        priorityCode: "D1",
-        nameLast: "GAMA",
-        nameFirst: "RUI",
+        priorityCode: "VOL",
+        nameLast: "WINDU",
+        nameFirst: "MACE",
         groupCode: NaN,
         cabinBooked: "Y",
         cabinDesired: "J",
@@ -116,9 +114,9 @@ class App extends Component {
         priorityList: 7,
         thruStatus: "???",
         bpIssued: false,
-        priorityCode: "D1",
-        nameLast: "WILLIAMS",
-        nameFirst: "SPENCER",
+        priorityCode: "VOL",
+        nameLast: "REN",
+        nameFirst: "KYLO",
         groupCode: NaN,
         cabinBooked: "Y",
         cabinDesired: "Y",
@@ -134,8 +132,8 @@ class App extends Component {
         thruStatus: "???",
         bpIssued: false,
         priorityCode: "D1",
-        nameLast: "KAUSHIK",
-        nameFirst: "SUMAN",
+        nameLast: "DAMERON",
+        nameFirst: "POE",
         groupCode: "RR7",
         cabinBooked: "Y",
         cabinDesired: "F",
@@ -153,6 +151,86 @@ class App extends Component {
         nameLast: "COLORES",
         nameFirst: "DAVID",
         groupCode: NaN,
+        cabinBooked: "Y",
+        cabinDesired: "Y",
+        destination: "TUS",
+        seatOrTransferFlight: NaN,
+        bags: "NB",
+        remarks: NaN
+      },
+      {
+        id: 10,
+        priorityList: 10,
+        thruStatus: "???",
+        bpIssued: false,
+        priorityCode: "D2",
+        nameLast: "FETT",
+        nameFirst: "BOBA",
+        groupCode: "AB5",
+        cabinBooked: "Y",
+        cabinDesired: "Y",
+        destination: "TUS",
+        seatOrTransferFlight: NaN,
+        bags: "NB",
+        remarks: NaN
+      },
+      {
+        id: 11,
+        priorityList: 11,
+        thruStatus: "???",
+        bpIssued: false,
+        priorityCode: "D2",
+        nameLast: "FETT",
+        nameFirst: "JANGO",
+        groupCode: "AB5",
+        cabinBooked: "Y",
+        cabinDesired: "Y",
+        destination: "TUS",
+        seatOrTransferFlight: NaN,
+        bags: "NB",
+        remarks: NaN
+      },
+      {
+        id: 12,
+        priorityList: 12,
+        thruStatus: "???",
+        bpIssued: false,
+        priorityCode: "D2",
+        nameLast: "KANATA",
+        nameFirst: "MAZ",
+        groupCode: "AB5",
+        cabinBooked: "Y",
+        cabinDesired: "Y",
+        destination: "TUS",
+        seatOrTransferFlight: NaN,
+        bags: "NB",
+        remarks: NaN
+      },
+      {
+        id: 13,
+        priorityList: 13,
+        thruStatus: "???",
+        bpIssued: false,
+        priorityCode: "D2",
+        nameLast: "TICO",
+        nameFirst: "ROSE",
+        groupCode: "AB5",
+        cabinBooked: "Y",
+        cabinDesired: "Y",
+        destination: "TUS",
+        seatOrTransferFlight: NaN,
+        bags: "NB",
+        remarks: NaN
+      },
+      {
+        id: 14,
+        priorityList: 14,
+        thruStatus: "???",
+        bpIssued: false,
+        priorityCode: "D2",
+        nameLast: "ERSO",
+        nameFirst: "JYN",
+        groupCode: "AB5",
         cabinBooked: "Y",
         cabinDesired: "Y",
         destination: "TUS",
@@ -212,6 +290,7 @@ class App extends Component {
             onDelete={this.handleDelete}
           /> */}
           <Passengers passengers={this.state.passengers} />
+          <Seatmap />
           {/* <Seatmap
             rows={[
               [
