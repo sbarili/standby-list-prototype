@@ -32,6 +32,16 @@
   color: white !important;
 }
 
+hr {
+  border: 0;
+  clear:both;
+  display:block;
+  width: 96%;               
+  background-color:lightgray;
+  height: 1px;
+  opacity: 80%;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
