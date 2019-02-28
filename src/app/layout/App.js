@@ -285,9 +285,8 @@ class App extends Component {
     console.log(this.state.passengers);
     return (
       <React.Fragment>
-        
-        <main className="container">
         <NavBar totalCounters={this.state.passengers.length} />
+        <main className="container-fluid" >
         <div class="container-fluid p-2" >
         <div class="row">
         <div  class="col-md-8">

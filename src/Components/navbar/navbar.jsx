@@ -21,7 +21,7 @@ const NavBar = () => {
   };
 
   return (
-    <nav className="navbar navbar-light justify-content-between" style={navStyle}> 
+    <nav className="navbar navbar-light" style={navStyle}> 
       <div className="container-fluid">
         <div className="row w-100">
           <div className="col-md-4">
