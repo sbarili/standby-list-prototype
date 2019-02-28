@@ -16,7 +16,8 @@ class App extends Component {
   state = {
     columns: SampleData.columns,
     passengers: SampleData.passengers,
-    hideOperationsBar: true
+    hideOperationsBar: true,
+    updatedPassengers: []
   };
 
   constructor() {
@@ -56,19 +57,70 @@ class App extends Component {
     //console.log(this.state.counters[0]);
   };
 
+  // handlePush(item) {
+  //   this.handleCheck(item) == false
+  //     ? this.setState({
+  //         data: update(this.state.data, {
+  //           $push: [item]
+  //         })
+  //       })
+  //     : console.log("exists");
+  // }
+
+  // handleCheck(val) {
+  //   return this.state.data.some(item => val.name === item.name);
+  // }
+
   onClick = (e, row, rowIndex) => {
     console.log(`clicked on row with index: ${rowIndex}`);
+    //const currentPassengers = this.state.currentPassengers;
+    const id = rowIndex + 1;
+    const selectedPax = this.findArrayElementByTitle(this.state.passengers, id);
+    const Passengers = this.state.updatedPassengers;
+    //console.log(selectedPax);
+    //console.log(this.state.passengers);
+
+    //var joined = Passengers.concat(selectedPax);
+    // !Passengers.filter(passenger => passenger.id === id).length > 0
+    //   ? this.setState({ updatedPassengers: joined })
+    //   : console.log("exists");
+
+    if (!Passengers.find(passenger => passenger.id === id)) {
+      Passengers.push(selectedPax);
+      console.log("added");
+      this.setState({ updatedPassengers: Passengers });
+      console.log("state.updatedPassengers", this.state.updatedPassengers);
+    } else {
+      // var removed = Passengers.splice(
+      //   Passengers.indexOf(passenger => passenger.id === id),
+      //   1
+      // );
+      console.log("removed");
+      this.setState({
+        updatedPassengers: Passengers.splice(
+          Passengers.indexOf(passenger => passenger.id === id),
+          1
+        )
+      });
+    }
+    console.log("updatedPassengers: ", this.state.updatedPassengers);
   };
 
   onMouseHover = (e, row, rowIndex) => {
     console.log(`enter on row with index: ${rowIndex}`);
   };
 
-  hideOrShowOpsBar = () => {
-    this.setState({
-      hideOperationsBar: true
+  findArrayElementByTitle = (paxArray, index) => {
+    return paxArray.find(passenger => {
+      return passenger.id === index;
     });
   };
+
+  // hideOrShowOpsBar = () => {
+  //   this.setState({
+  //     hideOperationsBar: true
+  //   });
+  // };
 
   render() {
     const rowStyle = { fontSize: 10 };
