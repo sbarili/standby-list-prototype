@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Card } from "react-bootstrap";
-import {findDOMNode} from 'react-dom'
-import ReactTooltip from 'react-tooltip'
+import { findDOMNode } from "react-dom";
+import ReactTooltip from "react-tooltip";
 import Popup from "react-popup";
 
 var SeatType = {
@@ -33,6 +33,9 @@ var SeatType = {
 };
 
 export default class Seatmap extends React.Component {
+  state = {
+    passengers: []
+  };
   constructor(props) {
     super(props);
 
@@ -54,7 +57,10 @@ export default class Seatmap extends React.Component {
               Type: 21,
               Location: 24,
               Text: "ZL ",
-              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
@@ -66,7 +72,10 @@ export default class Seatmap extends React.Component {
               Type: 7,
               Location: 24,
               Text: "ZL  ",
-              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
@@ -78,8 +87,10 @@ export default class Seatmap extends React.Component {
               Type: 21,
               Location: 24,
               Text: "ZL ",
-              Price: 0.0,               PNR: "",               FirstName: "",       
-                      LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
@@ -91,7 +102,10 @@ export default class Seatmap extends React.Component {
               Type: 7,
               Location: 5,
               Text: "   ",
-              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
@@ -103,7 +117,10 @@ export default class Seatmap extends React.Component {
               Type: 7,
               Location: 24,
               Text: "*L ",
-              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
@@ -115,7 +132,10 @@ export default class Seatmap extends React.Component {
               Type: 20,
               Location: 24,
               Text: "*L ",
-              Price: 0.0,               PNR: "XYVDFR",               FirstName: "First",               LastName: "last"             
+              Price: 0.0,
+              PNR: "XYVDFR",
+              FirstName: "First",
+              LastName: "last"
             },
             {
               Cabin: 2,
@@ -127,7 +147,10 @@ export default class Seatmap extends React.Component {
               Type: 7,
               Location: 24,
               Text: "*L ",
-              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
@@ -139,7 +162,10 @@ export default class Seatmap extends React.Component {
               Type: 7,
               Location: 24,
               Text: "*L ",
-              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
@@ -151,7 +177,10 @@ export default class Seatmap extends React.Component {
               Type: 7,
               Location: 5,
               Text: "   ",
-              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
@@ -163,7 +192,10 @@ export default class Seatmap extends React.Component {
               Type: 7,
               Location: 24,
               Text: "*L ",
-              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
@@ -175,7 +207,10 @@ export default class Seatmap extends React.Component {
               Type: 7,
               Location: 24,
               Text: "   ",
-              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
@@ -187,7 +222,10 @@ export default class Seatmap extends React.Component {
               Type: 7,
               Location: 24,
               Text: "*L ",
-              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             }
           ]
         },
@@ -206,7 +244,10 @@ export default class Seatmap extends React.Component {
               Type: 11,
               Location: 24,
               Text: "*P ",
-              Price: 0.0,               PNR: "XYVDFR",               FirstName: "First",               LastName: "last"             
+              Price: 0.0,
+              PNR: "XYVDFR",
+              FirstName: "First",
+              LastName: "last"
             },
             {
               Cabin: 2,
@@ -218,7 +259,10 @@ export default class Seatmap extends React.Component {
               Type: 8,
               Location: 24,
               Text: "   ",
-              Price: 0.0,               PNR: "XYVDFR",               FirstName: "First",               LastName: "last"             
+              Price: 0.0,
+              PNR: "XYVDFR",
+              FirstName: "First",
+              LastName: "last"
             },
             {
               Cabin: 2,
@@ -230,7 +274,10 @@ export default class Seatmap extends React.Component {
               Type: 11,
               Location: 24,
               Text: "*PH",
-              Price: 0.0,               PNR: "XYVDFR",               FirstName: "First",               LastName: "last"             
+              Price: 0.0,
+              PNR: "XYVDFR",
+              FirstName: "First",
+              LastName: "last"
             },
             {
               Cabin: 2,
@@ -242,7 +289,10 @@ export default class Seatmap extends React.Component {
               Type: 7,
               Location: 5,
               Text: "   ",
-              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
@@ -254,7 +304,10 @@ export default class Seatmap extends React.Component {
               Type: 11,
               Location: 24,
               Text: "*PH",
-              Price: 0.0,               PNR: "XYVDFR",               FirstName: "First",               LastName: "last"             
+              Price: 0.0,
+              PNR: "XYVDFR",
+              FirstName: "First",
+              LastName: "last"
             },
             {
               Cabin: 2,
@@ -266,7 +319,10 @@ export default class Seatmap extends React.Component {
               Type: 11,
               Location: 24,
               Text: "*P ",
-              Price: 0.0,               PNR: "XYVDFR",               FirstName: "First",               LastName: "last"             
+              Price: 0.0,
+              PNR: "XYVDFR",
+              FirstName: "First",
+              LastName: "last"
             },
             {
               Cabin: 2,
@@ -278,7 +334,10 @@ export default class Seatmap extends React.Component {
               Type: 11,
               Location: 24,
               Text: "*P ",
-              Price: 0.0,               PNR: "XYVDFR",               FirstName: "First",               LastName: "last"             
+              Price: 0.0,
+              PNR: "XYVDFR",
+              FirstName: "First",
+              LastName: "last"
             },
             {
               Cabin: 2,
@@ -290,7 +349,10 @@ export default class Seatmap extends React.Component {
               Type: 11,
               Location: 24,
               Text: "*PH",
-              Price: 0.0,               PNR: "XYVDFR",               FirstName: "First",               LastName: "last"             
+              Price: 0.0,
+              PNR: "XYVDFR",
+              FirstName: "First",
+              LastName: "last"
             },
             {
               Cabin: 2,
@@ -302,7 +364,10 @@ export default class Seatmap extends React.Component {
               Type: 7,
               Location: 5,
               Text: "   ",
-              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
@@ -314,7 +379,10 @@ export default class Seatmap extends React.Component {
               Type: 11,
               Location: 24,
               Text: "*PH",
-              Price: 0.0,               PNR: "XYVDFR",               FirstName: "First",               LastName: "last"             
+              Price: 0.0,
+              PNR: "XYVDFR",
+              FirstName: "First",
+              LastName: "last"
             },
             {
               Cabin: 2,
@@ -326,7 +394,10 @@ export default class Seatmap extends React.Component {
               Type: 8,
               Location: 24,
               Text: "   ",
-              Price: 0.0,               PNR: "XYVDFR",               FirstName: "First",               LastName: "last"             
+              Price: 0.0,
+              PNR: "XYVDFR",
+              FirstName: "First",
+              LastName: "last"
             },
             {
               Cabin: 2,
@@ -338,7 +409,10 @@ export default class Seatmap extends React.Component {
               Type: 11,
               Location: 24,
               Text: "*P ",
-              Price: 0.0,               PNR: "XYVDFR",               FirstName: "First",               LastName: "last"             
+              Price: 0.0,
+              PNR: "XYVDFR",
+              FirstName: "First",
+              LastName: "last"
             }
           ]
         },
@@ -357,7 +431,10 @@ export default class Seatmap extends React.Component {
               Type: 11,
               Location: 24,
               Text: "*P ",
-              Price: 0.0,               PNR: "XYVDFR",               FirstName: "First",               LastName: "last"             
+              Price: 0.0,
+              PNR: "XYVDFR",
+              FirstName: "First",
+              LastName: "last"
             },
             {
               Cabin: 2,
@@ -369,7 +446,10 @@ export default class Seatmap extends React.Component {
               Type: 11,
               Location: 24,
               Text: "*P ",
-              Price: 0.0,               PNR: "XYVDFR",               FirstName: "First",               LastName: "last"             
+              Price: 0.0,
+              PNR: "XYVDFR",
+              FirstName: "First",
+              LastName: "last"
             },
             {
               Cabin: 2,
@@ -381,7 +461,10 @@ export default class Seatmap extends React.Component {
               Type: 20,
               Location: 24,
               Text: "*PH",
-              Price: 0.0,               PNR: "XYVDFR",               FirstName: "First",               LastName: "last"             
+              Price: 0.0,
+              PNR: "XYVDFR",
+              FirstName: "First",
+              LastName: "last"
             },
             {
               Cabin: 2,
@@ -393,7 +476,10 @@ export default class Seatmap extends React.Component {
               Type: 7,
               Location: 5,
               Text: "   ",
-              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
@@ -405,7 +491,10 @@ export default class Seatmap extends React.Component {
               Type: 11,
               Location: 24,
               Text: "*PH",
-              Price: 0.0,               PNR: "XYVDFR",               FirstName: "First",               LastName: "last"             
+              Price: 0.0,
+              PNR: "XYVDFR",
+              FirstName: "First",
+              LastName: "last"
             },
             {
               Cabin: 2,
@@ -417,7 +506,10 @@ export default class Seatmap extends React.Component {
               Type: 11,
               Location: 24,
               Text: "*P ",
-              Price: 0.0,               PNR: "XYVDFR",               FirstName: "First",               LastName: "last"             
+              Price: 0.0,
+              PNR: "XYVDFR",
+              FirstName: "First",
+              LastName: "last"
             },
             {
               Cabin: 2,
@@ -429,7 +521,10 @@ export default class Seatmap extends React.Component {
               Type: 11,
               Location: 24,
               Text: "*P ",
-              Price: 0.0,               PNR: "XYVDFR",               FirstName: "First",               LastName: "last"             
+              Price: 0.0,
+              PNR: "XYVDFR",
+              FirstName: "First",
+              LastName: "last"
             },
             {
               Cabin: 2,
@@ -441,7 +536,10 @@ export default class Seatmap extends React.Component {
               Type: 11,
               Location: 24,
               Text: "*PH",
-              Price: 0.0,               PNR: "XYVDFR",               FirstName: "First",               LastName: "last"             
+              Price: 0.0,
+              PNR: "XYVDFR",
+              FirstName: "First",
+              LastName: "last"
             },
             {
               Cabin: 2,
@@ -453,7 +551,10 @@ export default class Seatmap extends React.Component {
               Type: 7,
               Location: 5,
               Text: "   ",
-              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
@@ -465,7 +566,10 @@ export default class Seatmap extends React.Component {
               Type: 11,
               Location: 24,
               Text: "*PH",
-              Price: 0.0,               PNR: "XYVDFR",               FirstName: "First",               LastName: "last"             
+              Price: 0.0,
+              PNR: "XYVDFR",
+              FirstName: "First",
+              LastName: "last"
             },
             {
               Cabin: 2,
@@ -477,7 +581,10 @@ export default class Seatmap extends React.Component {
               Type: 11,
               Location: 24,
               Text: "*P ",
-              Price: 0.0,               PNR: "XYVDFR",               FirstName: "First",               LastName: "last"             
+              Price: 0.0,
+              PNR: "XYVDFR",
+              FirstName: "First",
+              LastName: "last"
             },
             {
               Cabin: 2,
@@ -489,7 +596,10 @@ export default class Seatmap extends React.Component {
               Type: 11,
               Location: 24,
               Text: "*P ",
-              Price: 0.0,               PNR: "XYVDFR",               FirstName: "First",               LastName: "last"             
+              Price: 0.0,
+              PNR: "XYVDFR",
+              FirstName: "First",
+              LastName: "last"
             }
           ]
         },
@@ -508,7 +618,10 @@ export default class Seatmap extends React.Component {
               Type: 11,
               Location: 24,
               Text: "*P ",
-              Price: 0.0,               PNR: "XYVDFR",               FirstName: "First",               LastName: "last"             
+              Price: 0.0,
+              PNR: "XYVDFR",
+              FirstName: "First",
+              LastName: "last"
             },
             {
               Cabin: 2,
@@ -520,7 +633,10 @@ export default class Seatmap extends React.Component {
               Type: 7,
               Location: 24,
               Text: "*G ",
-              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
@@ -532,7 +648,10 @@ export default class Seatmap extends React.Component {
               Type: 11,
               Location: 24,
               Text: "*PH",
-              Price: 0.0,               PNR: "XYVDFR",               FirstName: "First",               LastName: "last"             
+              Price: 0.0,
+              PNR: "XYVDFR",
+              FirstName: "First",
+              LastName: "last"
             },
             {
               Cabin: 2,
@@ -544,7 +663,10 @@ export default class Seatmap extends React.Component {
               Type: 7,
               Location: 5,
               Text: "   ",
-              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
@@ -556,7 +678,10 @@ export default class Seatmap extends React.Component {
               Type: 11,
               Location: 24,
               Text: "*PH",
-              Price: 0.0,               PNR: "XYVDFR",               FirstName: "First",               LastName: "last"             
+              Price: 0.0,
+              PNR: "XYVDFR",
+              FirstName: "First",
+              LastName: "last"
             },
             {
               Cabin: 2,
@@ -568,7 +693,10 @@ export default class Seatmap extends React.Component {
               Type: 7,
               Location: 24,
               Text: "*G ",
-              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
@@ -580,7 +708,10 @@ export default class Seatmap extends React.Component {
               Type: 7,
               Location: 24,
               Text: "*G ",
-              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
@@ -592,7 +723,10 @@ export default class Seatmap extends React.Component {
               Type: 11,
               Location: 24,
               Text: "*PH",
-              Price: 0.0,               PNR: "XYVDFR",               FirstName: "First",               LastName: "last"             
+              Price: 0.0,
+              PNR: "XYVDFR",
+              FirstName: "First",
+              LastName: "last"
             },
             {
               Cabin: 2,
@@ -604,7 +738,10 @@ export default class Seatmap extends React.Component {
               Type: 7,
               Location: 5,
               Text: "   ",
-              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
@@ -616,7 +753,10 @@ export default class Seatmap extends React.Component {
               Type: 11,
               Location: 24,
               Text: "*PH",
-              Price: 0.0,               PNR: "XYVDFR",               FirstName: "First",               LastName: "last"             
+              Price: 0.0,
+              PNR: "XYVDFR",
+              FirstName: "First",
+              LastName: "last"
             },
             {
               Cabin: 2,
@@ -628,7 +768,10 @@ export default class Seatmap extends React.Component {
               Type: 7,
               Location: 24,
               Text: "*G ",
-              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
@@ -640,7 +783,10 @@ export default class Seatmap extends React.Component {
               Type: 11,
               Location: 24,
               Text: "*P ",
-              Price: 0.0,               PNR: "XYVDFR",               FirstName: "First",               LastName: "last"             
+              Price: 0.0,
+              PNR: "XYVDFR",
+              FirstName: "First",
+              LastName: "last"
             }
           ]
         },
@@ -659,7 +805,10 @@ export default class Seatmap extends React.Component {
               Type: 11,
               Location: 24,
               Text: "*P ",
-              Price: 0.0,               PNR: "XYVDFR",               FirstName: "First",               LastName: "last"             
+              Price: 0.0,
+              PNR: "XYVDFR",
+              FirstName: "First",
+              LastName: "last"
             },
             {
               Cabin: 2,
@@ -671,7 +820,10 @@ export default class Seatmap extends React.Component {
               Type: 7,
               Location: 24,
               Text: "*G ",
-              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
@@ -683,7 +835,10 @@ export default class Seatmap extends React.Component {
               Type: 11,
               Location: 24,
               Text: "*PH",
-              Price: 0.0,               PNR: "XYVDFR",               FirstName: "First",               LastName: "last"             
+              Price: 0.0,
+              PNR: "XYVDFR",
+              FirstName: "First",
+              LastName: "last"
             },
             {
               Cabin: 2,
@@ -695,7 +850,10 @@ export default class Seatmap extends React.Component {
               Type: 7,
               Location: 5,
               Text: "   ",
-              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
@@ -707,7 +865,10 @@ export default class Seatmap extends React.Component {
               Type: 11,
               Location: 24,
               Text: "*PH",
-              Price: 0.0,               PNR: "XYVDFR",               FirstName: "First",               LastName: "last"             
+              Price: 0.0,
+              PNR: "XYVDFR",
+              FirstName: "First",
+              LastName: "last"
             },
             {
               Cabin: 2,
@@ -719,7 +880,10 @@ export default class Seatmap extends React.Component {
               Type: 7,
               Location: 24,
               Text: "*G ",
-              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
@@ -731,7 +895,10 @@ export default class Seatmap extends React.Component {
               Type: 7,
               Location: 24,
               Text: "*G ",
-              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
@@ -743,7 +910,10 @@ export default class Seatmap extends React.Component {
               Type: 11,
               Location: 24,
               Text: "*PH",
-              Price: 0.0,               PNR: "XYVDFR",               FirstName: "First",               LastName: "last"             
+              Price: 0.0,
+              PNR: "XYVDFR",
+              FirstName: "First",
+              LastName: "last"
             },
             {
               Cabin: 2,
@@ -755,7 +925,10 @@ export default class Seatmap extends React.Component {
               Type: 7,
               Location: 5,
               Text: "   ",
-              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
@@ -767,7 +940,10 @@ export default class Seatmap extends React.Component {
               Type: 11,
               Location: 24,
               Text: "*PH",
-              Price: 0.0,               PNR: "XYVDFR",               FirstName: "First",               LastName: "last"             
+              Price: 0.0,
+              PNR: "XYVDFR",
+              FirstName: "First",
+              LastName: "last"
             },
             {
               Cabin: 2,
@@ -779,7 +955,10 @@ export default class Seatmap extends React.Component {
               Type: 7,
               Location: 24,
               Text: "*G ",
-              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
@@ -791,7 +970,10 @@ export default class Seatmap extends React.Component {
               Type: 11,
               Location: 24,
               Text: "*P ",
-              Price: 0.0,               PNR: "XYVDFR",               FirstName: "First",               LastName: "last"             
+              Price: 0.0,
+              PNR: "XYVDFR",
+              FirstName: "First",
+              LastName: "last"
             }
           ]
         },
@@ -810,7 +992,10 @@ export default class Seatmap extends React.Component {
               Type: 7,
               Location: 24,
               Text: "*G ",
-              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
@@ -822,7 +1007,10 @@ export default class Seatmap extends React.Component {
               Type: 7,
               Location: 24,
               Text: "*G ",
-              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
@@ -834,7 +1022,10 @@ export default class Seatmap extends React.Component {
               Type: 7,
               Location: 24,
               Text: "*GH",
-              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
@@ -846,7 +1037,10 @@ export default class Seatmap extends React.Component {
               Type: 7,
               Location: 5,
               Text: "   ",
-              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
@@ -858,7 +1052,10 @@ export default class Seatmap extends React.Component {
               Type: 7,
               Location: 24,
               Text: "*GH",
-              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
@@ -870,7 +1067,10 @@ export default class Seatmap extends React.Component {
               Type: 7,
               Location: 24,
               Text: "*G ",
-              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
@@ -882,7 +1082,10 @@ export default class Seatmap extends React.Component {
               Type: 7,
               Location: 24,
               Text: "*G ",
-              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
@@ -894,7 +1097,10 @@ export default class Seatmap extends React.Component {
               Type: 7,
               Location: 24,
               Text: "*GH",
-              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
@@ -906,7 +1112,10 @@ export default class Seatmap extends React.Component {
               Type: 7,
               Location: 5,
               Text: "   ",
-              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
@@ -918,7 +1127,10 @@ export default class Seatmap extends React.Component {
               Type: 7,
               Location: 24,
               Text: "*GH",
-              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
@@ -930,7 +1142,10 @@ export default class Seatmap extends React.Component {
               Type: 7,
               Location: 24,
               Text: "*G ",
-              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
@@ -942,7 +1157,10 @@ export default class Seatmap extends React.Component {
               Type: 7,
               Location: 24,
               Text: "*G ",
-              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             }
           ]
         },
@@ -961,7 +1179,10 @@ export default class Seatmap extends React.Component {
               Type: 7,
               Location: 24,
               Text: "*G ",
-              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
@@ -973,7 +1194,10 @@ export default class Seatmap extends React.Component {
               Type: 7,
               Location: 24,
               Text: "*G ",
-              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
@@ -985,7 +1209,10 @@ export default class Seatmap extends React.Component {
               Type: 7,
               Location: 24,
               Text: "*GH",
-              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
@@ -997,7 +1224,10 @@ export default class Seatmap extends React.Component {
               Type: 7,
               Location: 5,
               Text: "   ",
-              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
@@ -1009,7 +1239,10 @@ export default class Seatmap extends React.Component {
               Type: 7,
               Location: 24,
               Text: "*GH",
-              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
@@ -1021,7 +1254,10 @@ export default class Seatmap extends React.Component {
               Type: 7,
               Location: 24,
               Text: "*G ",
-              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
@@ -1033,7 +1269,10 @@ export default class Seatmap extends React.Component {
               Type: 7,
               Location: 24,
               Text: "*G ",
-              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
@@ -1045,7 +1284,10 @@ export default class Seatmap extends React.Component {
               Type: 7,
               Location: 24,
               Text: "*GH",
-              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
@@ -1057,7 +1299,10 @@ export default class Seatmap extends React.Component {
               Type: 7,
               Location: 5,
               Text: "   ",
-              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
@@ -1069,7 +1314,10 @@ export default class Seatmap extends React.Component {
               Type: 7,
               Location: 24,
               Text: "*GH",
-              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
@@ -1081,7 +1329,10 @@ export default class Seatmap extends React.Component {
               Type: 7,
               Location: 24,
               Text: "*G ",
-              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
@@ -1093,7 +1344,10 @@ export default class Seatmap extends React.Component {
               Type: 7,
               Location: 24,
               Text: "*G ",
-              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             }
           ]
         },
@@ -1112,7 +1366,10 @@ export default class Seatmap extends React.Component {
               Type: 7,
               Location: 24,
               Text: "*G ",
-              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
@@ -1124,7 +1381,10 @@ export default class Seatmap extends React.Component {
               Type: 7,
               Location: 24,
               Text: "*G ",
-              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
@@ -1136,7 +1396,10 @@ export default class Seatmap extends React.Component {
               Type: 7,
               Location: 24,
               Text: "*GH",
-              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
@@ -1148,7 +1411,10 @@ export default class Seatmap extends React.Component {
               Type: 7,
               Location: 5,
               Text: "   ",
-              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
@@ -1160,7 +1426,10 @@ export default class Seatmap extends React.Component {
               Type: 7,
               Location: 24,
               Text: "*GH",
-              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
@@ -1172,7 +1441,10 @@ export default class Seatmap extends React.Component {
               Type: 7,
               Location: 24,
               Text: "*G ",
-              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
@@ -1184,7 +1456,10 @@ export default class Seatmap extends React.Component {
               Type: 7,
               Location: 24,
               Text: "*G ",
-              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
@@ -1196,7 +1471,10 @@ export default class Seatmap extends React.Component {
               Type: 7,
               Location: 24,
               Text: "*GH",
-              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
@@ -1208,7 +1486,10 @@ export default class Seatmap extends React.Component {
               Type: 7,
               Location: 5,
               Text: "   ",
-              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
@@ -1220,7 +1501,10 @@ export default class Seatmap extends React.Component {
               Type: 7,
               Location: 24,
               Text: "*GH",
-              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
@@ -1232,7 +1516,10 @@ export default class Seatmap extends React.Component {
               Type: 7,
               Location: 24,
               Text: "*G ",
-              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
@@ -1244,7 +1531,10 @@ export default class Seatmap extends React.Component {
               Type: 7,
               Location: 24,
               Text: "*G ",
-              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             }
           ]
         },
@@ -1263,7 +1553,10 @@ export default class Seatmap extends React.Component {
               Type: 7,
               Location: 24,
               Text: "*G ",
-              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
@@ -1275,7 +1568,10 @@ export default class Seatmap extends React.Component {
               Type: 7,
               Location: 24,
               Text: "*G ",
-              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
@@ -1287,7 +1583,10 @@ export default class Seatmap extends React.Component {
               Type: 7,
               Location: 24,
               Text: "*GH",
-              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
@@ -1299,7 +1598,10 @@ export default class Seatmap extends React.Component {
               Type: 7,
               Location: 5,
               Text: "   ",
-              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
@@ -1311,7 +1613,10 @@ export default class Seatmap extends React.Component {
               Type: 7,
               Location: 24,
               Text: "*GH",
-              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
@@ -1323,7 +1628,10 @@ export default class Seatmap extends React.Component {
               Type: 7,
               Location: 24,
               Text: "*G ",
-              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
@@ -1335,7 +1643,10 @@ export default class Seatmap extends React.Component {
               Type: 7,
               Location: 24,
               Text: "*G ",
-              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
@@ -1347,7 +1658,10 @@ export default class Seatmap extends React.Component {
               Type: 7,
               Location: 24,
               Text: "*GH",
-              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
@@ -1359,7 +1673,10 @@ export default class Seatmap extends React.Component {
               Type: 7,
               Location: 5,
               Text: "   ",
-              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
@@ -1371,7 +1688,10 @@ export default class Seatmap extends React.Component {
               Type: 7,
               Location: 24,
               Text: "*GH",
-              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
@@ -1383,7 +1703,10 @@ export default class Seatmap extends React.Component {
               Type: 7,
               Location: 24,
               Text: "*G ",
-              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
@@ -1395,7 +1718,10 @@ export default class Seatmap extends React.Component {
               Type: 7,
               Location: 24,
               Text: "*G ",
-              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             }
           ]
         },
@@ -1414,7 +1740,10 @@ export default class Seatmap extends React.Component {
               Type: 7,
               Location: 24,
               Text: "*G ",
-              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
@@ -1426,7 +1755,10 @@ export default class Seatmap extends React.Component {
               Type: 7,
               Location: 24,
               Text: "*G ",
-              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
@@ -1438,7 +1770,10 @@ export default class Seatmap extends React.Component {
               Type: 7,
               Location: 24,
               Text: "*GH",
-              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
@@ -1450,7 +1785,10 @@ export default class Seatmap extends React.Component {
               Type: 7,
               Location: 5,
               Text: "   ",
-              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
@@ -1462,8 +1800,10 @@ export default class Seatmap extends React.Component {
               Type: 21,
               Location: 24,
               Text: "ZGH",
-              Price: 0.0,               PNR: "",               FirstName: "",
-                             LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
@@ -1475,7 +1815,10 @@ export default class Seatmap extends React.Component {
               Type: 21,
               Location: 24,
               Text: "ZG ",
-              Price: 0.0,               PNR: "",               FirstName: "",               LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
@@ -1487,7 +1830,10 @@ export default class Seatmap extends React.Component {
               Type: 21,
               Location: 24,
               Text: "ZG ",
-              Price: 0.0,               PNR: "",               FirstName: "",               LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
@@ -1499,7 +1845,10 @@ export default class Seatmap extends React.Component {
               Type: 21,
               Location: 24,
               Text: "ZGH",
-              Price: 0.0,               PNR: "",               FirstName: "",               LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
@@ -1511,7 +1860,10 @@ export default class Seatmap extends React.Component {
               Type: 7,
               Location: 5,
               Text: "   ",
-              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
@@ -1523,7 +1875,10 @@ export default class Seatmap extends React.Component {
               Type: 7,
               Location: 24,
               Text: "*GH",
-              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
@@ -1535,7 +1890,10 @@ export default class Seatmap extends React.Component {
               Type: 7,
               Location: 24,
               Text: "*G ",
-              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
@@ -1547,7 +1905,10 @@ export default class Seatmap extends React.Component {
               Type: 7,
               Location: 24,
               Text: "*G ",
-              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             }
           ]
         },
@@ -1566,7 +1927,10 @@ export default class Seatmap extends React.Component {
               Type: 21,
               Location: 24,
               Text: "ZG ",
-              Price: 0.0,               PNR: "",               FirstName: "",               LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
@@ -1578,7 +1942,10 @@ export default class Seatmap extends React.Component {
               Type: 7,
               Location: 5,
               Text: "   ",
-              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
@@ -1590,7 +1957,10 @@ export default class Seatmap extends React.Component {
               Type: 21,
               Location: 24,
               Text: "ZGH",
-              Price: 0.0,               PNR: "",               FirstName: "",               LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
@@ -1602,7 +1972,10 @@ export default class Seatmap extends React.Component {
               Type: 7,
               Location: 5,
               Text: "   ",
-              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
@@ -1614,7 +1987,10 @@ export default class Seatmap extends React.Component {
               Type: 8,
               Location: 24,
               Text: "LAV",
-              Price: 0.0,               PNR: "XYVDFR",               FirstName: "First",               LastName: "last"             
+              Price: 0.0,
+              PNR: "XYVDFR",
+              FirstName: "First",
+              LastName: "last"
             },
             {
               Cabin: 2,
@@ -1626,7 +2002,10 @@ export default class Seatmap extends React.Component {
               Type: 7,
               Location: 5,
               Text: "   ",
-              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
@@ -1638,7 +2017,10 @@ export default class Seatmap extends React.Component {
               Type: 7,
               Location: 5,
               Text: "   ",
-              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
@@ -1650,7 +2032,10 @@ export default class Seatmap extends React.Component {
               Type: 8,
               Location: 24,
               Text: "LAV",
-              Price: 0.0,               PNR: "XYVDFR",               FirstName: "First",               LastName: "last"             
+              Price: 0.0,
+              PNR: "XYVDFR",
+              FirstName: "First",
+              LastName: "last"
             },
             {
               Cabin: 2,
@@ -1662,7 +2047,10 @@ export default class Seatmap extends React.Component {
               Type: 7,
               Location: 5,
               Text: "   ",
-              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
@@ -1674,7 +2062,10 @@ export default class Seatmap extends React.Component {
               Type: 21,
               Location: 24,
               Text: "ZGH",
-              Price: 0.0,               PNR: "",               FirstName: "",               LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
@@ -1686,7 +2077,10 @@ export default class Seatmap extends React.Component {
               Type: 7,
               Location: 5,
               Text: "   ",
-              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
@@ -1698,7 +2092,10 @@ export default class Seatmap extends React.Component {
               Type: 21,
               Location: 24,
               Text: "ZG ",
-              Price: 0.0,               PNR: "",               FirstName: "",               LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             }
           ]
         },
@@ -1717,7 +2114,10 @@ export default class Seatmap extends React.Component {
               Type: 20,
               Location: 12,
               Text: "*L ",
-              Price: 0.0,               PNR: "XYVDFR",               FirstName: "First",               LastName: "last"             
+              Price: 0.0,
+              PNR: "XYVDFR",
+              FirstName: "First",
+              LastName: "last"
             },
             {
               Cabin: 2,
@@ -1729,7 +2129,10 @@ export default class Seatmap extends React.Component {
               Type: 7,
               Location: 5,
               Text: "   ",
-              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
@@ -1741,7 +2144,10 @@ export default class Seatmap extends React.Component {
               Type: 20,
               Location: 12,
               Text: "*L ",
-              Price: 0.0,               PNR: "XYVDFR",               FirstName: "First",               LastName: "last"             
+              Price: 0.0,
+              PNR: "XYVDFR",
+              FirstName: "First",
+              LastName: "last"
             },
             {
               Cabin: 2,
@@ -1753,7 +2159,10 @@ export default class Seatmap extends React.Component {
               Type: 7,
               Location: 5,
               Text: "   ",
-              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
@@ -1765,7 +2174,10 @@ export default class Seatmap extends React.Component {
               Type: 7,
               Location: 5,
               Text: "   ",
-              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
@@ -1777,7 +2189,10 @@ export default class Seatmap extends React.Component {
               Type: 4,
               Location: 12,
               Text: "GAL",
-              Price: 0.0,               PNR: "XYVDFR",               FirstName: "First",               LastName: "last"             
+              Price: 0.0,
+              PNR: "XYVDFR",
+              FirstName: "First",
+              LastName: "last"
             },
             {
               Cabin: 2,
@@ -1789,7 +2204,10 @@ export default class Seatmap extends React.Component {
               Type: 4,
               Location: 12,
               Text: "GAL",
-              Price: 0.0,               PNR: "XYVDFR",               FirstName: "First",               LastName: "last"             
+              Price: 0.0,
+              PNR: "XYVDFR",
+              FirstName: "First",
+              LastName: "last"
             },
             {
               Cabin: 2,
@@ -1801,7 +2219,10 @@ export default class Seatmap extends React.Component {
               Type: 7,
               Location: 5,
               Text: "   ",
-              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
@@ -1813,7 +2234,10 @@ export default class Seatmap extends React.Component {
               Type: 7,
               Location: 5,
               Text: "   ",
-              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
@@ -1825,7 +2249,10 @@ export default class Seatmap extends React.Component {
               Type: 20,
               Location: 12,
               Text: "*L ",
-              Price: 0.0,               PNR: "XYVDFR",               FirstName: "First",               LastName: "last"             
+              Price: 0.0,
+              PNR: "XYVDFR",
+              FirstName: "First",
+              LastName: "last"
             },
             {
               Cabin: 2,
@@ -1837,7 +2264,10 @@ export default class Seatmap extends React.Component {
               Type: 7,
               Location: 5,
               Text: "   ",
-              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
@@ -1849,7 +2279,10 @@ export default class Seatmap extends React.Component {
               Type: 20,
               Location: 12,
               Text: "*L ",
-              Price: 0.0,               PNR: "XYVDFR",               FirstName: "First",               LastName: "last"             
+              Price: 0.0,
+              PNR: "XYVDFR",
+              FirstName: "First",
+              LastName: "last"
             }
           ]
         },
@@ -1868,7 +2301,10 @@ export default class Seatmap extends React.Component {
               Type: 20,
               Location: 24,
               Text: "*L ",
-              Price: 0.0,               PNR: "XYVDFR",               FirstName: "First",               LastName: "last"             
+              Price: 0.0,
+              PNR: "XYVDFR",
+              FirstName: "First",
+              LastName: "last"
             },
             {
               Cabin: 2,
@@ -1880,7 +2316,10 @@ export default class Seatmap extends React.Component {
               Type: 7,
               Location: 5,
               Text: "   ",
-              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
@@ -1892,7 +2331,10 @@ export default class Seatmap extends React.Component {
               Type: 20,
               Location: 24,
               Text: "*LH",
-              Price: 0.0,               PNR: "XYVDFR",               FirstName: "First",               LastName: "last"             
+              Price: 0.0,
+              PNR: "XYVDFR",
+              FirstName: "First",
+              LastName: "last"
             },
             {
               Cabin: 2,
@@ -1904,7 +2346,10 @@ export default class Seatmap extends React.Component {
               Type: 7,
               Location: 5,
               Text: "   ",
-              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
@@ -1916,7 +2361,10 @@ export default class Seatmap extends React.Component {
               Type: 7,
               Location: 5,
               Text: "   ",
-              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
@@ -1928,7 +2376,10 @@ export default class Seatmap extends React.Component {
               Type: 7,
               Location: 5,
               Text: "   ",
-              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
@@ -1940,7 +2391,10 @@ export default class Seatmap extends React.Component {
               Type: 7,
               Location: 5,
               Text: "   ",
-              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
@@ -1952,7 +2406,10 @@ export default class Seatmap extends React.Component {
               Type: 7,
               Location: 5,
               Text: "   ",
-              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
@@ -1964,7 +2421,10 @@ export default class Seatmap extends React.Component {
               Type: 7,
               Location: 5,
               Text: "   ",
-              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
@@ -1976,7 +2436,10 @@ export default class Seatmap extends React.Component {
               Type: 20,
               Location: 24,
               Text: "*LH",
-              Price: 0.0,               PNR: "XYVDFR",               FirstName: "First",               LastName: "last"             
+              Price: 0.0,
+              PNR: "XYVDFR",
+              FirstName: "First",
+              LastName: "last"
             },
             {
               Cabin: 2,
@@ -1988,7 +2451,10 @@ export default class Seatmap extends React.Component {
               Type: 7,
               Location: 5,
               Text: "   ",
-              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
@@ -2000,7 +2466,10 @@ export default class Seatmap extends React.Component {
               Type: 20,
               Location: 24,
               Text: "*L ",
-              Price: 0.0,               PNR: "XYVDFR",               FirstName: "First",               LastName: "last"             
+              Price: 0.0,
+              PNR: "XYVDFR",
+              FirstName: "First",
+              LastName: "last"
             }
           ]
         },
@@ -2019,7 +2488,10 @@ export default class Seatmap extends React.Component {
               Type: 11,
               Location: 24,
               Text: "*P ",
-              Price: 0.0,               PNR: "XYVDFR",               FirstName: "First",               LastName: "last"             
+              Price: 0.0,
+              PNR: "XYVDFR",
+              FirstName: "First",
+              LastName: "last"
             },
             {
               Cabin: 2,
@@ -2031,7 +2503,10 @@ export default class Seatmap extends React.Component {
               Type: 11,
               Location: 24,
               Text: "*P ",
-              Price: 0.0,               PNR: "XYVDFR",               FirstName: "First",               LastName: "last"             
+              Price: 0.0,
+              PNR: "XYVDFR",
+              FirstName: "First",
+              LastName: "last"
             },
             {
               Cabin: 2,
@@ -2043,7 +2518,10 @@ export default class Seatmap extends React.Component {
               Type: 11,
               Location: 24,
               Text: "*P ",
-              Price: 0.0,               PNR: "XYVDFR",               FirstName: "First",               LastName: "last"             
+              Price: 0.0,
+              PNR: "XYVDFR",
+              FirstName: "First",
+              LastName: "last"
             },
             {
               Cabin: 2,
@@ -2055,7 +2533,10 @@ export default class Seatmap extends React.Component {
               Type: 7,
               Location: 5,
               Text: "   ",
-              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
@@ -2067,7 +2548,10 @@ export default class Seatmap extends React.Component {
               Type: 20,
               Location: 24,
               Text: "*L ",
-              Price: 0.0,               PNR: "XYVDFR",               FirstName: "First",               LastName: "last"             
+              Price: 0.0,
+              PNR: "XYVDFR",
+              FirstName: "First",
+              LastName: "last"
             },
             {
               Cabin: 2,
@@ -2079,7 +2563,10 @@ export default class Seatmap extends React.Component {
               Type: 20,
               Location: 24,
               Text: "*L ",
-              Price: 0.0,               PNR: "XYVDFR",               FirstName: "First",               LastName: "last"             
+              Price: 0.0,
+              PNR: "XYVDFR",
+              FirstName: "First",
+              LastName: "last"
             },
             {
               Cabin: 2,
@@ -2091,7 +2578,10 @@ export default class Seatmap extends React.Component {
               Type: 20,
               Location: 24,
               Text: "*L ",
-              Price: 0.0,               PNR: "XYVDFR",               FirstName: "First",               LastName: "last"             
+              Price: 0.0,
+              PNR: "XYVDFR",
+              FirstName: "First",
+              LastName: "last"
             },
             {
               Cabin: 2,
@@ -2103,7 +2593,10 @@ export default class Seatmap extends React.Component {
               Type: 20,
               Location: 24,
               Text: "*L ",
-              Price: 0.0,               PNR: "XYVDFR",               FirstName: "First",               LastName: "last"             
+              Price: 0.0,
+              PNR: "XYVDFR",
+              FirstName: "First",
+              LastName: "last"
             },
             {
               Cabin: 2,
@@ -2115,7 +2608,10 @@ export default class Seatmap extends React.Component {
               Type: 7,
               Location: 5,
               Text: "   ",
-              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
@@ -2127,7 +2623,10 @@ export default class Seatmap extends React.Component {
               Type: 11,
               Location: 24,
               Text: "*P ",
-              Price: 0.0,               PNR: "XYVDFR",               FirstName: "First",               LastName: "last"             
+              Price: 0.0,
+              PNR: "XYVDFR",
+              FirstName: "First",
+              LastName: "last"
             },
             {
               Cabin: 2,
@@ -2139,7 +2638,10 @@ export default class Seatmap extends React.Component {
               Type: 11,
               Location: 24,
               Text: "*P ",
-              Price: 0.0,               PNR: "XYVDFR",               FirstName: "First",               LastName: "last"             
+              Price: 0.0,
+              PNR: "XYVDFR",
+              FirstName: "First",
+              LastName: "last"
             },
             {
               Cabin: 2,
@@ -2151,7 +2653,10 @@ export default class Seatmap extends React.Component {
               Type: 11,
               Location: 24,
               Text: "*P ",
-              Price: 0.0,               PNR: "XYVDFR",               FirstName: "First",               LastName: "last"             
+              Price: 0.0,
+              PNR: "XYVDFR",
+              FirstName: "First",
+              LastName: "last"
             }
           ]
         },
@@ -2170,7 +2675,10 @@ export default class Seatmap extends React.Component {
               Type: 11,
               Location: 24,
               Text: "*P ",
-              Price: 0.0,               PNR: "XYVDFR",               FirstName: "First",               LastName: "last"             
+              Price: 0.0,
+              PNR: "XYVDFR",
+              FirstName: "First",
+              LastName: "last"
             },
             {
               Cabin: 2,
@@ -2182,7 +2690,10 @@ export default class Seatmap extends React.Component {
               Type: 7,
               Location: 24,
               Text: "*G ",
-              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
@@ -2194,7 +2705,10 @@ export default class Seatmap extends React.Component {
               Type: 11,
               Location: 24,
               Text: "*P ",
-              Price: 0.0,               PNR: "XYVDFR",               FirstName: "First",               LastName: "last"             
+              Price: 0.0,
+              PNR: "XYVDFR",
+              FirstName: "First",
+              LastName: "last"
             },
             {
               Cabin: 2,
@@ -2206,7 +2720,10 @@ export default class Seatmap extends React.Component {
               Type: 7,
               Location: 5,
               Text: "   ",
-              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
@@ -2218,7 +2735,10 @@ export default class Seatmap extends React.Component {
               Type: 20,
               Location: 24,
               Text: "*LH",
-              Price: 0.0,               PNR: "XYVDFR",               FirstName: "First",               LastName: "last"             
+              Price: 0.0,
+              PNR: "XYVDFR",
+              FirstName: "First",
+              LastName: "last"
             },
             {
               Cabin: 2,
@@ -2230,7 +2750,10 @@ export default class Seatmap extends React.Component {
               Type: 20,
               Location: 24,
               Text: "*L ",
-              Price: 0.0,               PNR: "XYVDFR",               FirstName: "First",               LastName: "last"             
+              Price: 0.0,
+              PNR: "XYVDFR",
+              FirstName: "First",
+              LastName: "last"
             },
             {
               Cabin: 2,
@@ -2242,7 +2765,10 @@ export default class Seatmap extends React.Component {
               Type: 20,
               Location: 24,
               Text: "*LH",
-              Price: 0.0,               PNR: "XYVDFR",               FirstName: "First",               LastName: "last"             
+              Price: 0.0,
+              PNR: "XYVDFR",
+              FirstName: "First",
+              LastName: "last"
             },
             {
               Cabin: 2,
@@ -2254,7 +2780,10 @@ export default class Seatmap extends React.Component {
               Type: 20,
               Location: 24,
               Text: "*LH",
-              Price: 0.0,               PNR: "XYVDFR",               FirstName: "First",               LastName: "last"             
+              Price: 0.0,
+              PNR: "XYVDFR",
+              FirstName: "First",
+              LastName: "last"
             },
             {
               Cabin: 2,
@@ -2266,7 +2795,10 @@ export default class Seatmap extends React.Component {
               Type: 7,
               Location: 5,
               Text: "   ",
-              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
@@ -2278,7 +2810,10 @@ export default class Seatmap extends React.Component {
               Type: 11,
               Location: 24,
               Text: "*PH",
-              Price: 0.0,               PNR: "XYVDFR",               FirstName: "First",               LastName: "last"             
+              Price: 0.0,
+              PNR: "XYVDFR",
+              FirstName: "First",
+              LastName: "last"
             },
             {
               Cabin: 2,
@@ -2290,7 +2825,10 @@ export default class Seatmap extends React.Component {
               Type: 7,
               Location: 24,
               Text: "*G ",
-              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
@@ -2302,7 +2840,10 @@ export default class Seatmap extends React.Component {
               Type: 11,
               Location: 24,
               Text: "*P ",
-              Price: 0.0,               PNR: "XYVDFR",               FirstName: "First",               LastName: "last"             
+              Price: 0.0,
+              PNR: "XYVDFR",
+              FirstName: "First",
+              LastName: "last"
             }
           ]
         },
@@ -2321,7 +2862,10 @@ export default class Seatmap extends React.Component {
               Type: 11,
               Location: 24,
               Text: "*P ",
-              Price: 0.0,               PNR: "XYVDFR",               FirstName: "First",               LastName: "last"             
+              Price: 0.0,
+              PNR: "XYVDFR",
+              FirstName: "First",
+              LastName: "last"
             },
             {
               Cabin: 2,
@@ -2333,7 +2877,10 @@ export default class Seatmap extends React.Component {
               Type: 7,
               Location: 24,
               Text: "*G ",
-              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
@@ -2345,7 +2892,10 @@ export default class Seatmap extends React.Component {
               Type: 11,
               Location: 24,
               Text: "*P ",
-              Price: 0.0,               PNR: "XYVDFR",               FirstName: "First",               LastName: "last"             
+              Price: 0.0,
+              PNR: "XYVDFR",
+              FirstName: "First",
+              LastName: "last"
             },
             {
               Cabin: 2,
@@ -2357,7 +2907,10 @@ export default class Seatmap extends React.Component {
               Type: 7,
               Location: 5,
               Text: "   ",
-              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
@@ -2369,7 +2922,10 @@ export default class Seatmap extends React.Component {
               Type: 20,
               Location: 24,
               Text: "*LH",
-              Price: 0.0,               PNR: "XYVDFR",               FirstName: "First",               LastName: "last"             
+              Price: 0.0,
+              PNR: "XYVDFR",
+              FirstName: "First",
+              LastName: "last"
             },
             {
               Cabin: 2,
@@ -2381,7 +2937,10 @@ export default class Seatmap extends React.Component {
               Type: 20,
               Location: 24,
               Text: "*L ",
-              Price: 0.0,               PNR: "XYVDFR",               FirstName: "First",               LastName: "last"             
+              Price: 0.0,
+              PNR: "XYVDFR",
+              FirstName: "First",
+              LastName: "last"
             },
             {
               Cabin: 2,
@@ -2393,7 +2952,10 @@ export default class Seatmap extends React.Component {
               Type: 20,
               Location: 24,
               Text: "*LH",
-              Price: 0.0,               PNR: "XYVDFR",               FirstName: "First",               LastName: "last"             
+              Price: 0.0,
+              PNR: "XYVDFR",
+              FirstName: "First",
+              LastName: "last"
             },
             {
               Cabin: 2,
@@ -2405,7 +2967,10 @@ export default class Seatmap extends React.Component {
               Type: 20,
               Location: 24,
               Text: "*LH",
-              Price: 0.0,               PNR: "XYVDFR",               FirstName: "First",               LastName: "last"             
+              Price: 0.0,
+              PNR: "XYVDFR",
+              FirstName: "First",
+              LastName: "last"
             },
             {
               Cabin: 2,
@@ -2417,7 +2982,10 @@ export default class Seatmap extends React.Component {
               Type: 7,
               Location: 5,
               Text: "   ",
-              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
@@ -2429,7 +2997,10 @@ export default class Seatmap extends React.Component {
               Type: 11,
               Location: 24,
               Text: "*PH",
-              Price: 0.0,               PNR: "XYVDFR",               FirstName: "First",               LastName: "last"             
+              Price: 0.0,
+              PNR: "XYVDFR",
+              FirstName: "First",
+              LastName: "last"
             },
             {
               Cabin: 2,
@@ -2441,7 +3012,10 @@ export default class Seatmap extends React.Component {
               Type: 7,
               Location: 24,
               Text: "*G ",
-              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
@@ -2453,7 +3027,10 @@ export default class Seatmap extends React.Component {
               Type: 11,
               Location: 24,
               Text: "*P ",
-              Price: 0.0,               PNR: "XYVDFR",               FirstName: "First",               LastName: "last"             
+              Price: 0.0,
+              PNR: "XYVDFR",
+              FirstName: "First",
+              LastName: "last"
             }
           ]
         },
@@ -2472,7 +3049,10 @@ export default class Seatmap extends React.Component {
               Type: 11,
               Location: 24,
               Text: "*P ",
-              Price: 0.0,               PNR: "XYVDFR",               FirstName: "First",               LastName: "last"             
+              Price: 0.0,
+              PNR: "XYVDFR",
+              FirstName: "First",
+              LastName: "last"
             },
             {
               Cabin: 2,
@@ -2484,7 +3064,10 @@ export default class Seatmap extends React.Component {
               Type: 7,
               Location: 24,
               Text: "*G ",
-              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
@@ -2496,7 +3079,10 @@ export default class Seatmap extends React.Component {
               Type: 11,
               Location: 24,
               Text: "*P ",
-              Price: 0.0,               PNR: "XYVDFR",               FirstName: "First",               LastName: "last"             
+              Price: 0.0,
+              PNR: "XYVDFR",
+              FirstName: "First",
+              LastName: "last"
             },
             {
               Cabin: 2,
@@ -2508,7 +3094,10 @@ export default class Seatmap extends React.Component {
               Type: 7,
               Location: 5,
               Text: "   ",
-              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
@@ -2520,7 +3109,10 @@ export default class Seatmap extends React.Component {
               Type: 7,
               Location: 24,
               Text: "*GH",
-              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
@@ -2532,7 +3124,10 @@ export default class Seatmap extends React.Component {
               Type: 7,
               Location: 24,
               Text: "*G ",
-              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
@@ -2544,7 +3139,10 @@ export default class Seatmap extends React.Component {
               Type: 7,
               Location: 24,
               Text: "*GH",
-              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
@@ -2556,7 +3154,10 @@ export default class Seatmap extends React.Component {
               Type: 7,
               Location: 24,
               Text: "*GH",
-              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
@@ -2568,7 +3169,10 @@ export default class Seatmap extends React.Component {
               Type: 7,
               Location: 5,
               Text: "   ",
-              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
@@ -2595,7 +3199,10 @@ export default class Seatmap extends React.Component {
               Type: 7,
               Location: 24,
               Text: "*G ",
-              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
@@ -2644,7 +3251,10 @@ export default class Seatmap extends React.Component {
               Type: 7,
               Location: 24,
               Text: "*G ",
-              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
@@ -2671,7 +3281,10 @@ export default class Seatmap extends React.Component {
               Type: 7,
               Location: 5,
               Text: "   ",
-              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
@@ -2683,7 +3296,10 @@ export default class Seatmap extends React.Component {
               Type: 7,
               Location: 24,
               Text: "*GH",
-              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
@@ -2695,7 +3311,10 @@ export default class Seatmap extends React.Component {
               Type: 7,
               Location: 24,
               Text: "*G ",
-              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
@@ -2707,7 +3326,10 @@ export default class Seatmap extends React.Component {
               Type: 7,
               Location: 24,
               Text: "*GH",
-              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
@@ -2719,7 +3341,10 @@ export default class Seatmap extends React.Component {
               Type: 7,
               Location: 24,
               Text: "*GH",
-              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
@@ -2731,7 +3356,10 @@ export default class Seatmap extends React.Component {
               Type: 7,
               Location: 5,
               Text: "   ",
-              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
@@ -2758,7 +3386,10 @@ export default class Seatmap extends React.Component {
               Type: 7,
               Location: 24,
               Text: "*G ",
-              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
@@ -2792,7 +3423,10 @@ export default class Seatmap extends React.Component {
               Type: 7,
               Location: 24,
               Text: "*G ",
-              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
@@ -2804,7 +3438,10 @@ export default class Seatmap extends React.Component {
               Type: 7,
               Location: 24,
               Text: "*G ",
-              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
@@ -2816,7 +3453,10 @@ export default class Seatmap extends React.Component {
               Type: 7,
               Location: 24,
               Text: "*G ",
-              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
@@ -2828,7 +3468,10 @@ export default class Seatmap extends React.Component {
               Type: 7,
               Location: 5,
               Text: "   ",
-              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
@@ -2840,7 +3483,10 @@ export default class Seatmap extends React.Component {
               Type: 7,
               Location: 24,
               Text: "*GH",
-              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
@@ -2852,7 +3498,10 @@ export default class Seatmap extends React.Component {
               Type: 7,
               Location: 24,
               Text: "*G ",
-              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
@@ -2864,7 +3513,10 @@ export default class Seatmap extends React.Component {
               Type: 7,
               Location: 24,
               Text: "*GH",
-              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
@@ -2876,7 +3528,10 @@ export default class Seatmap extends React.Component {
               Type: 7,
               Location: 24,
               Text: "*GH",
-              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
@@ -2888,7 +3543,10 @@ export default class Seatmap extends React.Component {
               Type: 7,
               Location: 5,
               Text: "   ",
-              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
@@ -2900,7 +3558,10 @@ export default class Seatmap extends React.Component {
               Type: 7,
               Location: 24,
               Text: "*GH",
-              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
@@ -2912,7 +3573,10 @@ export default class Seatmap extends React.Component {
               Type: 7,
               Location: 24,
               Text: "*G ",
-              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
@@ -2924,7 +3588,10 @@ export default class Seatmap extends React.Component {
               Type: 7,
               Location: 24,
               Text: "*G ",
-              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             }
           ]
         },
@@ -2943,7 +3610,10 @@ export default class Seatmap extends React.Component {
               Type: 7,
               Location: 24,
               Text: "*G ",
-              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
@@ -2955,7 +3625,10 @@ export default class Seatmap extends React.Component {
               Type: 7,
               Location: 24,
               Text: "*G ",
-              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
@@ -2967,7 +3640,10 @@ export default class Seatmap extends React.Component {
               Type: 7,
               Location: 24,
               Text: "*G ",
-              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
@@ -2979,7 +3655,10 @@ export default class Seatmap extends React.Component {
               Type: 7,
               Location: 5,
               Text: "   ",
-              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
@@ -2991,7 +3670,10 @@ export default class Seatmap extends React.Component {
               Type: 7,
               Location: 24,
               Text: "*GH",
-              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
@@ -3003,7 +3685,10 @@ export default class Seatmap extends React.Component {
               Type: 7,
               Location: 24,
               Text: "*G ",
-              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
@@ -3015,7 +3700,10 @@ export default class Seatmap extends React.Component {
               Type: 7,
               Location: 24,
               Text: "*GH",
-              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
@@ -3027,7 +3715,10 @@ export default class Seatmap extends React.Component {
               Type: 7,
               Location: 24,
               Text: "*GH",
-              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
@@ -3039,7 +3730,10 @@ export default class Seatmap extends React.Component {
               Type: 7,
               Location: 5,
               Text: "   ",
-              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
@@ -3051,7 +3745,10 @@ export default class Seatmap extends React.Component {
               Type: 7,
               Location: 24,
               Text: "*GH",
-              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
@@ -3063,7 +3760,10 @@ export default class Seatmap extends React.Component {
               Type: 7,
               Location: 24,
               Text: "*G ",
-              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
@@ -3075,7 +3775,10 @@ export default class Seatmap extends React.Component {
               Type: 7,
               Location: 24,
               Text: "*G ",
-              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             }
           ]
         },
@@ -3094,7 +3797,10 @@ export default class Seatmap extends React.Component {
               Type: 7,
               Location: 24,
               Text: "*G ",
-              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
@@ -3106,7 +3812,10 @@ export default class Seatmap extends React.Component {
               Type: 7,
               Location: 24,
               Text: "*G ",
-              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
@@ -3118,7 +3827,10 @@ export default class Seatmap extends React.Component {
               Type: 7,
               Location: 24,
               Text: "*G ",
-              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
@@ -3130,7 +3842,10 @@ export default class Seatmap extends React.Component {
               Type: 7,
               Location: 5,
               Text: "   ",
-              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
@@ -3142,7 +3857,10 @@ export default class Seatmap extends React.Component {
               Type: 7,
               Location: 24,
               Text: "*GH",
-              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
@@ -3199,7 +3917,10 @@ export default class Seatmap extends React.Component {
               Type: 7,
               Location: 5,
               Text: "   ",
-              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
@@ -3241,7 +3962,10 @@ export default class Seatmap extends React.Component {
               Type: 7,
               Location: 24,
               Text: "*G ",
-              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             }
           ]
         },
@@ -3275,7 +3999,10 @@ export default class Seatmap extends React.Component {
               Type: 7,
               Location: 5,
               Text: "   ",
-              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
@@ -3302,7 +4029,10 @@ export default class Seatmap extends React.Component {
               Type: 7,
               Location: 5,
               Text: "   ",
-              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
@@ -3314,7 +4044,10 @@ export default class Seatmap extends React.Component {
               Type: 7,
               Location: 24,
               Text: "*GH",
-              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
@@ -3356,7 +4089,10 @@ export default class Seatmap extends React.Component {
               Type: 7,
               Location: 24,
               Text: "*GH",
-              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
@@ -3368,7 +4104,10 @@ export default class Seatmap extends React.Component {
               Type: 7,
               Location: 5,
               Text: "   ",
-              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
@@ -3395,7 +4134,10 @@ export default class Seatmap extends React.Component {
               Type: 7,
               Location: 5,
               Text: "   ",
-              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
@@ -3444,7 +4186,10 @@ export default class Seatmap extends React.Component {
               Type: 7,
               Location: 5,
               Text: "   ",
-              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
@@ -3471,7 +4216,10 @@ export default class Seatmap extends React.Component {
               Type: 7,
               Location: 5,
               Text: "   ",
-              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
@@ -3483,7 +4231,10 @@ export default class Seatmap extends React.Component {
               Type: 7,
               Location: 24,
               Text: "*GH",
-              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
@@ -3525,7 +4276,10 @@ export default class Seatmap extends React.Component {
               Type: 7,
               Location: 24,
               Text: "*GH",
-              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
@@ -3537,7 +4291,10 @@ export default class Seatmap extends React.Component {
               Type: 7,
               Location: 5,
               Text: "   ",
-              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
@@ -3564,7 +4321,10 @@ export default class Seatmap extends React.Component {
               Type: 7,
               Location: 5,
               Text: "   ",
-              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
@@ -3591,7 +4351,7 @@ export default class Seatmap extends React.Component {
             {
               Cabin: 2,
               SeatNumber: "24A",
-              Row: 43,
+              Row: 24,
               RowLabel: "P43",
               Col: 0,
               ColName: "A",
@@ -3606,19 +4366,22 @@ export default class Seatmap extends React.Component {
             {
               Cabin: 2,
               SeatNumber: "24B",
-              Row: 43,
+              Row: 24,
               RowLabel: "P43",
               Col: 1,
               ColName: "B",
               Type: 7,
               Location: 5,
               Text: "   ",
-              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
               SeatNumber: "24C",
-              Row: 43,
+              Row: 24,
               RowLabel: "P43",
               Col: 2,
               ColName: "C",
@@ -3633,79 +4396,97 @@ export default class Seatmap extends React.Component {
             {
               Cabin: 2,
               SeatNumber: "24 ",
-              Row: 43,
+              Row: 24,
               RowLabel: "P43",
               Col: 3,
               ColName: " ",
               Type: 7,
               Location: 5,
               Text: "   ",
-              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
               SeatNumber: "24D",
-              Row: 43,
+              Row: 24,
               RowLabel: "P43",
               Col: 4,
               ColName: "D",
               Type: 21,
               Location: 24,
               Text: "ZGH",
-                Price: 0.0,               PNR: "",               FirstName: "",               LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
               SeatNumber: "24E",
-              Row: 43,
+              Row: 24,
               RowLabel: "P43",
               Col: 5,
               ColName: "E",
               Type: 21,
               Location: 24,
               Text: "ZG ",
-              Price: 0.0,               PNR: "",               FirstName: "",               LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
               SeatNumber: "24G",
-              Row: 43,
+              Row: 24,
               RowLabel: "P43",
               Col: 6,
               ColName: "G",
               Type: 21,
               Location: 24,
               Text: "ZGH",
-              Price: 0.0,               PNR: "",               FirstName: "",               LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
               SeatNumber: "24H",
-              Row: 43,
+              Row: 24,
               RowLabel: "P43",
               Col: 7,
               ColName: "H",
               Type: 21,
               Location: 24,
               Text: "ZGH",
-              Price: 0.0,               PNR: "",               FirstName: "",               LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
               SeatNumber: "24 ",
-              Row: 43,
+              Row: 24,
               RowLabel: "P43",
               Col: 8,
               ColName: " ",
               Type: 7,
               Location: 5,
               Text: "   ",
-              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
               SeatNumber: "24J",
-              Row: 43,
+              Row: 24,
               RowLabel: "P43",
               Col: 9,
               ColName: "J",
@@ -3720,19 +4501,22 @@ export default class Seatmap extends React.Component {
             {
               Cabin: 2,
               SeatNumber: "24K",
-              Row: 43,
+              Row: 24,
               RowLabel: "P43",
               Col: 10,
               ColName: "K",
               Type: 7,
               Location: 5,
               Text: "   ",
-              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
               SeatNumber: "24L",
-              Row: 43,
+              Row: 24,
               RowLabel: "P43",
               Col: 11,
               ColName: "L",
@@ -3754,7 +4538,7 @@ export default class Seatmap extends React.Component {
             {
               Cabin: 2,
               SeatNumber: "25A",
-              Row: 44,
+              Row: 25,
               RowLabel: "44",
               Col: 0,
               ColName: "A",
@@ -3769,103 +4553,127 @@ export default class Seatmap extends React.Component {
             {
               Cabin: 2,
               SeatNumber: "25B",
-              Row: 44,
+              Row: 25,
               RowLabel: "44",
               Col: 1,
               ColName: "B",
               Type: 7,
               Location: 5,
               Text: "   ",
-              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
               SeatNumber: "25C",
-              Row: 44,
+              Row: 25,
               RowLabel: "44",
               Col: 2,
               ColName: "C",
               Type: 7,
               Location: 5,
               Text: "   ",
-              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
               SeatNumber: "25 ",
-              Row: 44,
+              Row: 25,
               RowLabel: "44",
               Col: 3,
               ColName: " ",
               Type: 7,
               Location: 5,
               Text: "   ",
-              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
               SeatNumber: "25D",
-              Row: 44,
-              RowLabel: "44",
+              Row: 25,
+              RowLabel: "D",
               Col: 4,
               ColName: "D",
               Type: 21,
               Location: 24,
               Text: "ZGH",
-              Price: 0.0,               PNR: "",               FirstName: "",               LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
               SeatNumber: "25E",
-              Row: 44,
+              Row: 25,
               RowLabel: "44",
               Col: 5,
               ColName: "E",
               Type: 21,
               Location: 24,
               Text: "ZG ",
-              Price: 0.0,               PNR: "",               FirstName: "",               LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
               SeatNumber: "25G",
-              Row: 44,
+              Row: 25,
               RowLabel: "44",
               Col: 6,
               ColName: "G",
               Type: 21,
               Location: 24,
               Text: "ZG ",
-              Price: 0.0,               PNR: "",               FirstName: "",               LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
               SeatNumber: "25H",
-              Row: 44,
+              Row: 25,
               RowLabel: "44",
               Col: 7,
               ColName: "H",
               Type: 21,
               Location: 24,
               Text: "ZGH",
-              Price: 0.0,               PNR: "",               FirstName: "",               LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
               SeatNumber: "25 ",
-              Row: 44,
+              Row: 25,
               RowLabel: "44",
               Col: 8,
               ColName: " ",
               Type: 7,
               Location: 5,
               Text: "   ",
-              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
               SeatNumber: "25J",
-              Row: 44,
+              Row: 25,
               RowLabel: "44",
               Col: 9,
               ColName: "J",
@@ -3880,19 +4688,22 @@ export default class Seatmap extends React.Component {
             {
               Cabin: 2,
               SeatNumber: "25K",
-              Row: 44,
+              Row: 25,
               RowLabel: "44",
               Col: 10,
               ColName: "K",
               Type: 7,
               Location: 24,
               Text: "   ",
-              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
+              Price: 0.0,
+              PNR: "",
+              FirstName: "",
+              LastName: ""
             },
             {
               Cabin: 2,
               SeatNumber: "25L",
-              Row: 44,
+              Row: 25,
               RowLabel: "44",
               Col: 11,
               ColName: "L",
@@ -3910,7 +4721,6 @@ export default class Seatmap extends React.Component {
     };
 
     this.state = { seatMap: [seatMock] };
-   
 
     var flight = {
       flightNumber: 51,
@@ -3920,58 +4730,68 @@ export default class Seatmap extends React.Component {
     };
   }
   handleSeatClick(seat, event) {
-     if (event.type === 'contextmenu') {
+    if (event.type === "contextmenu") {
       event.preventDefault();
-    if(seat.Type == SeatType.BOARDED || seat.Type == SeatType.NOTBOARDED || seat.Type == SeatType.THRU || seat.Type == SeatType.HELD)
-    {
-           Popup.alert("Seat Number: " +  seat.SeatNumber + " PNR: " + seat.PNR + "         Name: " + seat.LastName + "/" + seat.FirstName  + "   Status: " + this.paxSeatStatus(seat.Type) );
-    }
-  }
-    else {    
-      if(seat.Type == SeatType.AVAILABLE || seat.Type == SeatType.BLOCKED)
-      {
-        var seatMapDetails = this.state.seatMap;
-        seatMapDetails[0].Rows[0].Seats[0].Type=SeatType.BOARDED;
-        this.setState({seatMap:seatMapDetails});
+      if (
+        seat.Type == SeatType.BOARDED ||
+        seat.Type == SeatType.NOTBOARDED ||
+        seat.Type == SeatType.THRU ||
+        seat.Type == SeatType.HELD
+      ) {
+        Popup.alert(
+          "Seat Number: " +
+            seat.SeatNumber +
+            " PNR: " +
+            seat.PNR +
+            "         Name: " +
+            seat.LastName +
+            "/" +
+            seat.FirstName +
+            "   Status: " +
+            this.paxSeatStatus(seat.Type)
+        );
+      }
+    } else {
+      if (seat.Type == SeatType.AVAILABLE || seat.Type == SeatType.BLOCKED) {
+        var paxLst = this.props.passengers;
+        if (paxLst.length > 0) {
+          var pax = paxLst[0];
+
+          var seatMapDetails = this.state.seatMap;
+          // seatMapDetails[0].Rows.find(
+          //   x => x.SeatNumber === seat.SeatNumber
+          // ).Type = SeatType.BOARDED;
+          seatMapDetails[0].Rows[seat.Row - 1].Seats[seat.Col].Type =
+            SeatType.NOTBOARDED;
+          seatMapDetails[0].Rows[seat.Row - 1].Seats[seat.Col].FirstName =
+            pax.name;
+          // seatMapDetails[0].Rows.find(
+          //   x => x.SeatNumber === seat.SeatNumber
+          // ).FirstName = pax.name;
+          this.setState({ seatMap: seatMapDetails });
+        }
       }
     }
-       
-    
-    
   }
 
-  
-paxSeatStatus(type) {
+  paxSeatStatus(type) {
+    if (type == SeatType.BLOCKED) return "BLOCKED";
+    else if (type == SeatType.BOARDED) return "BOARDED";
+    else if (type == SeatType.NOTBOARDED) return "NOTBOARDED";
+    else if (type == SeatType.THRU) return "THRU";
+    else if (type == SeatType.HELD) return "HELD";
+    else if (type == SeatType.AVAILABLE) return "OPEN";
+    else return "Default";
+  }
 
-  if(type ==  SeatType.BLOCKED)
-    return "BLOCKED";
-  else if(type == SeatType.BOARDED)
-    return "BOARDED";
-    else if(type ==SeatType.NOTBOARDED)
-    return "NOTBOARDED";
-    else if(type ==SeatType.THRU)
-    return "THRU";
-    else if(type == SeatType.HELD)
-    return "HELD";
-    else if(type ==SeatType.AVAILABLE)
-    return "OPEN";
-    else
-    return "Default";
-  
-}
-  
   componentDidMount() {
-   // document.addEventListener('contextmenu', this.handleSeatClick);
-   
-}
+    // document.addEventListener('contextmenu', this.handleSeatClick);
+  }
 
-componentWillUnmount() {
-  //document.removeEventListener('contextmenu', this.handleSeatClick);
- 
-}
+  componentWillUnmount() {
+    //document.removeEventListener('contextmenu', this.handleSeatClick);
+  }
 
-  
-   
   renderSeat(seat) {
     if (seat.Location === SeatType.AISLE) {
       return <div style={{ width: "30px" }} />;
@@ -4005,22 +4825,28 @@ componentWillUnmount() {
 
       return (
         <div className="card" style={{ width: "40px" }}>
-          <div className="card-body" style={backStyle} >
-            <p  className="card-text">{seat.name}</p>
+          <div className="card-body" style={backStyle}>
+            <p className="card-text">{seat.name}</p>
           </div>
         </div>
-       
       );
     }
   }
 
   renderRow(row) {
-    return (      
+    return (
       <tr>
-           {row.Seats.map(seat => {
-          return <td data-tip={seat.SeatNumber + " " + seat.PNR } onContextMenu={this.handleSeatClick.bind(this, seat)} onClick={this.handleSeatClick.bind(this, seat)}>{this.renderSeat(seat)}</td>;
+        {row.Seats.map(seat => {
+          return (
+            <td
+              data-tip={seat.SeatNumber + " " + seat.PNR}
+              onContextMenu={this.handleSeatClick.bind(this, seat)}
+              onClick={this.handleSeatClick.bind(this, seat)}
+            >
+              {this.renderSeat(seat)}
+            </td>
+          );
         })}
-       
       </tr>
     );
   }
@@ -4029,31 +4855,61 @@ componentWillUnmount() {
     var rows = cabin.Rows;
 
     return (
-     <div>
-       <div className="row" style={{lineHeight:'1em',paddingBottom:5}}>
-        <div className="col-sm-2 text-center" style={{background:"#00ff00", color:"#00467f",paddingBottom:5}}>
-          <span style={{fontSize:'0.6em'}}>Boarded</span>
+      <div>
+        <div className="row" style={{ lineHeight: "1em", paddingBottom: 5 }}>
+          <div
+            className="col-sm-2 text-center"
+            style={{
+              background: "#00ff00",
+              color: "#00467f",
+              paddingBottom: 5
+            }}
+          >
+            <span style={{ fontSize: "0.6em" }}>Boarded</span>
+          </div>
+          <div
+            className="col-sm-2 text-center"
+            style={{
+              background: "#ffff00",
+              color: "#00467f",
+              paddingBottom: 5
+            }}
+          >
+            <span style={{ fontSize: "0.6em" }}>Not Brd</span>
+          </div>
+          <div
+            className="col-sm-2 text-center"
+            style={{ background: "#dc143c", color: "white", paddingBottom: 5 }}
+          >
+            <span style={{ fontSize: "0.6em" }}>Thru</span>
+          </div>
+          <div
+            className="col-sm-2 text-center"
+            style={{ background: "#800080", color: "white", paddingBottom: 5 }}
+          >
+            <span style={{ fontSize: "0.6em" }}>Held</span>
+          </div>
+          <div
+            className="col-sm-2 text-center"
+            style={{ background: "#191970", color: "white", paddingBottom: 5 }}
+          >
+            <span style={{ fontSize: "0.6em" }}>Open</span>
+          </div>
+          <div
+            className="col-sm-2 text-center"
+            style={{
+              background: "#daa520",
+              color: "#00467f",
+              paddingBottom: 5
+            }}
+          >
+            <span style={{ fontSize: "0.6em" }}>Block</span>
+          </div>
         </div>
-        <div className="col-sm-2 text-center" style={{background:"#ffff00", color:"#00467f",paddingBottom:5}}>
-          <span style={{fontSize:'0.6em'}}>Not Brd</span>
-        </div>
-        <div className="col-sm-2 text-center" style={{background:"#dc143c", color:"white",paddingBottom:5}}>
-          <span style={{fontSize:'0.6em'}}>Thru</span>
-        </div>
-        <div className="col-sm-2 text-center" style={{background:"#800080", color:"white",paddingBottom:5}}>
-          <span style={{fontSize:'0.6em'}}>Held</span>
-        </div>
-        <div className="col-sm-2 text-center" style={{background:"#191970", color:"white",paddingBottom:5}}>
-          <span style={{fontSize:'0.6em'}}>Open</span>
-        </div>
-        <div className="col-sm-2 text-center" style={{background:"#daa520", color:"#00467f",paddingBottom:5}}>
-          <span style={{fontSize:'0.6em'}}>Block</span>
-        </div>
-       </div>
 
-        <div style={{width:'100%',overflow:'auto'}}>
-          <table style={{width:'100%'}}>
-            <tbody>             
+        <div style={{ width: "100%", overflow: "auto" }}>
+          <table style={{ width: "100%" }}>
+            <tbody>
               {rows.map(row => {
                 return this.renderRow(row);
               })}
@@ -4069,10 +4925,8 @@ componentWillUnmount() {
       <div>
         {" "}
         {this.state.seatMap.map(cabin => this.renderCabin(cabin))}
-        <ReactTooltip></ReactTooltip>
-      
-      </div>     
-
+        <ReactTooltip />
+      </div>
     );
   }
 }
