@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import "./App.css";
 
 import filterFactory, {
   multiSelectFilter
@@ -6,7 +7,7 @@ import filterFactory, {
 
 function headerTextFormatter(column, colIndex) {
   return (
-    <div style={{ fontSize: 10 }}>
+    <div className="AppStandbyList" style={{ fontSize: 14 }}>
       <strong>{column.text}</strong>
     </div>
   );

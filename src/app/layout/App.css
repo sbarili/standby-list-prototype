@@ -23,6 +23,15 @@
   color: #61dafb;
 }
 
+.AppStandbyList {
+  color: #00467f;
+}
+
+.AppButtonStyling {
+  background-color: #00467f !important;
+  color: white !important;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

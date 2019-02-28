@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Dropdown } from "react-bootstrap";
 //import logo from './logo.svg';
 //import Counters from "./Components/counters";
 import Passengers from "../../Components/Passengers";
@@ -9,17 +10,17 @@ import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import Popup from "react-popup";
 import BootstrapTable from "react-bootstrap-table-next";
 import SampleData from "./data";
+import "./App.css";
 
 import "react-bootstrap-table-next/dist/react-bootstrap-table2.min.css";
-//import Seatmap from "react-seatmap";
-//import "./App.css";
 
 library.add(faSearch);
+
 class App extends Component {
   state = {
     columns: SampleData.columns,
     passengers: SampleData.passengers,
-    hideOperationsBar: true,
+    showOperationsBar: false,
     updatedPassengers: []
   };
 
@@ -30,12 +31,6 @@ class App extends Component {
     this.onMouseHover = this.onMouseHover.bind(this);
     console.log("App - Constructor", this.state.passengers);
   }
-
-  // componentDidMount() {
-  //   //Make ajax calls to get data from the server
-  //   //this.setState({movies});
-  //   //console.log("App - Mounted");
-  // }
 
   handleDelete = counterId => {
     const counters = this.state.counters.filter(c => c.id !== counterId);
@@ -60,53 +55,28 @@ class App extends Component {
     //console.log(this.state.counters[0]);
   };
 
-  // handlePush(item) {
-  //   this.handleCheck(item) == false
-  //     ? this.setState({
-  //         data: update(this.state.data, {
-  //           $push: [item]
-  //         })
-  //       })
-  //     : console.log("exists");
-  // }
-
-  // handleCheck(val) {
-  //   return this.state.data.some(item => val.name === item.name);
-  // }
-
   onClick = (e, row, rowIndex) => {
     console.log(`clicked on row with index: ${rowIndex}`);
-    //const currentPassengers = this.state.currentPassengers;
     const id = rowIndex + 1;
     const selectedPax = this.findArrayElementByTitle(this.state.passengers, id);
     const Passengers = this.state.updatedPassengers;
-    //console.log(selectedPax);
-    //console.log(this.state.passengers);
-
-    //var joined = Passengers.concat(selectedPax);
-    // !Passengers.filter(passenger => passenger.id === id).length > 0
-    //   ? this.setState({ updatedPassengers: joined })
-    //   : console.log("exists");
-
     if (!Passengers.find(passenger => passenger.id === id)) {
       Passengers.push(selectedPax);
-      console.log("added");
       this.setState({ updatedPassengers: Passengers });
-      console.log("state.updatedPassengers", this.state.updatedPassengers);
     } else {
-      // var removed = Passengers.splice(
-      //   Passengers.indexOf(passenger => passenger.id === id),
-      //   1
-      // );
-      console.log("removed");
+      var index = Passengers.findIndex(passenger => passenger.id === id);
+
+      Passengers.splice(index, 1);
       this.setState({
-        updatedPassengers: Passengers.splice(
-          Passengers.indexOf(passenger => passenger.id === id),
-          1
-        )
+        updatedPassengers: Passengers
       });
     }
     console.log("updatedPassengers: ", this.state.updatedPassengers);
+    if (this.state.updatedPassengers.length > 0) {
+      this.setState({ showOperationsBar: true });
+    } else {
+      this.setState({ showOperationsBar: false });
+    }
   };
 
   onMouseHover = (e, row, rowIndex) => {
@@ -126,21 +96,15 @@ class App extends Component {
   // };
 
   render() {
-    const rowStyle = { fontSize: 10 };
+    const rowStyle = { fontSize: 12 };
     const selectRow = {
       mode: "checkbox",
       clickToSelect: true,
       style: { backgroundColor: "#c8e6c9" }
     };
-
-    // const rowEvents = {
-    //   onClick: (e, row, rowIndex) => {
-    //     console.log(`clicked on row with index: ${rowIndex}`);
-    //   },
-    // onMouseEnter: (e, row, rowIndex) => {
-    //   console.log(`enter on row with index: ${rowIndex}`);
-    // }
-    // };
+    const hoverStyle = {
+      style: { backgroundColor: "#e8e8e8" }
+    };
 
     return (
       <React.Fragment>
@@ -148,13 +112,40 @@ class App extends Component {
         <main className="container-fluid p-2">
           <div className="row">
             <div className="col-md-8">
-              {this.state.hideOperationsBar && (
-                <div>
-                  <button>Testing1</button>
-                  <button>Testing2</button>
-                  <button>Testing3</button>
-                </div>
-              )}
+              <div className="row" style={{ height: 47 }}>
+                <Dropdown style={{ position: "absolute", right: 5 }}>
+                  <Dropdown.Toggle id="dropdown-custom-1">
+                    Filter
+                  </Dropdown.Toggle>
+                  <Dropdown.Menu className="super-colors">
+                    <Dropdown.Item eventKey="1">OS</Dropdown.Item>
+                    <Dropdown.Item eventKey="2">VOL</Dropdown.Item>
+                    <Dropdown.Item eventKey="3">NONREVENUE</Dropdown.Item>
+                  </Dropdown.Menu>
+                </Dropdown>
+                {this.state.showOperationsBar && (
+                  <div style={{ paddingLeft: 5 }}>
+                    <button className="btn btn-primary btn-sm m-2 AppButtonStyling">
+                      Auto Assign
+                    </button>
+                    <button className="btn btn-primary btn-sm m-2 AppButtonStyling">
+                      Transfer
+                    </button>
+                    <button className="btn btn-primary btn-sm m-2 AppButtonStyling">
+                      Unassign
+                    </button>
+                    <button className="btn btn-primary btn-sm m-2 AppButtonStyling">
+                      CXL PAX
+                    </button>
+                    <button className="btn btn-primary btn-sm m-2 AppButtonStyling">
+                      OS/VOL
+                    </button>
+                    <button className="btn btn-primary btn-sm m-2 AppButtonStyling">
+                      VOL/OS
+                    </button>
+                  </div>
+                )}
+              </div>
               <BootstrapTable
                 keyField="id"
                 data={this.state.passengers}
@@ -164,10 +155,9 @@ class App extends Component {
                 rowStyle={rowStyle}
                 headerStyle={rowStyle}
                 rowEvents={{
-                  onClick: this.onClick,
-                  onMouseEnter: this.onMouseHover
+                  onClick: this.onClick
                 }}
-                hover
+                hover={hoverStyle}
               />
             </div>
             <div className="col-md-4">
