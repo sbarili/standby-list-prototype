@@ -2,14 +2,18 @@ import React, { Component } from "react";
 //import logo from './logo.svg';
 //import Counters from "./Components/counters";
 import Passengers from "../../Components/Passengers";
-import NavBar from "../../Components/navbar";
+import NavBar from "../../Components/navbar/navbar";
 import Seatmap from "../../Components/SeatMap";
 import BootstrapTable from "react-bootstrap-table-next";
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { faSearch } from '@fortawesome/free-solid-svg-icons'
+
 
 import "react-bootstrap-table-next/dist/react-bootstrap-table2.min.css";
 //import Seatmap from "react-seatmap";
 //import "./App.css";
 
+library.add(faSearch);
 class App extends Component {
   state = {
     passengers: [

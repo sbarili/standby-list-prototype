@@ -1,0 +1,16 @@
+.searchInput {
+    color: white;
+}
+
+.searchInput::placeholder {
+    color: #0081ea;
+}
+
+.dropdownTabs {
+    background-color:#00467f;
+    border:'none';
+}
+
+.caret {
+    display: none;
+    }
