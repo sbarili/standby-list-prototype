@@ -22,7 +22,7 @@
     background-color: white;
     padding-left: 20px;
     padding-right: 20px;
-    border-radius: 5px;
+    border-radius: 5px 5px 0 0;
 }
 
 .dropdownTabs:focus {
@@ -32,7 +32,21 @@
     background-color: white;
     padding-left: 20px;
     padding-right: 20px;
-    border-radius: 5px;
+    border-radius: 5px 5px 0 0;
+}
+
+.boardingTab {
+    outline: none;
+    border: none;
+    color: #00467f;
+    background-color: white;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 5px 5px 0 0;
+}
+
+.boardingTab::after {
+    display: none !important;
 }
 
 @font-face {
