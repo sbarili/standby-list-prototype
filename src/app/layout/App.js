@@ -1,13 +1,11 @@
 import React, { Component } from "react";
 //import logo from './logo.svg';
 //import Counters from "./Components/counters";
-//import Passengers from "../../Components/Passengers";
+import Passengers from "../../Components/Passengers";
 import NavBar from "../../Components/navbar";
 import Seatmap from "../../Components/SeatMap";
 import BootstrapTable from "react-bootstrap-table-next";
-import filterFactory, {
-  multiSelectFilter
-} from "react-bootstrap-table2-filter";
+import Popup from "react-popup";
 import SampleData from "./data";
 
 import "react-bootstrap-table-next/dist/react-bootstrap-table2.min.css";
@@ -114,7 +112,6 @@ class App extends Component {
                   onClick: this.onClick,
                   onMouseEnter: this.onMouseHover
                 }}
-                filter={filterFactory()}
                 hover
               />
             </div>
@@ -123,6 +120,16 @@ class App extends Component {
             </div>
           </div>
         </main>
+        <Popup
+          className="mm-popup"
+          btnClass="mm-popup__btn"
+          closeBtn={true}
+          closeHtml={null}
+          defaultOk="Ok"
+          defaultCancel="Cancel"
+          wildClasses={false}
+          escToClose={true}
+        />
       </React.Fragment>
     );
   }
