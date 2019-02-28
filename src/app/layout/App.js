@@ -4,10 +4,10 @@ import React, { Component } from "react";
 import Passengers from "../../Components/Passengers";
 import NavBar from "../../Components/navbar/navbar";
 import Seatmap from "../../Components/SeatMap";
-import BootstrapTable from "react-bootstrap-table-next";
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
-
+import BootstrapTable from "react-bootstrap-table-next";
+import Popup from "react-popup";
 
 import "react-bootstrap-table-next/dist/react-bootstrap-table2.min.css";
 //import Seatmap from "react-seatmap";
@@ -285,31 +285,27 @@ class App extends Component {
     console.log(this.state.passengers);
     return (
       <React.Fragment>
-        <NavBar totalCounters={this.state.passengers.length} />
+        
         <main className="container">
-          {/* <Counters
-            counters={this.state.counters}
-            onReset={this.handleReset}
-            onIncrement={this.handleIncrement}
-            onDelete={this.handleDelete}
-          /> */}
-          <Passengers passengers={this.state.passengers} />
-          <Seatmap />
-          {/* <Seatmap
-            rows={[
-              [
-                { number: "1A", isReserved: false },
-                { number: "1B", isReserved: false }
-              ],
-              [
-                { number: "2A", isReserved: false },
-                { number: "2B", isReserved: false }
-              ]
-            ]}
-            maxReservableSeats={3}
-            alpha
-          /> */}
+        <NavBar totalCounters={this.state.passengers.length} />
+        <div class="container-fluid p-2" >
+        <div class="row">
+        <div  class="col-md-8">
+        <Passengers passengers={this.state.passengers} /></div>
+        <div  class="col-md-4">  <Seatmap /></div>
+        </div>         
+          </div>
         </main>
+        <Popup
+    className="mm-popup"
+    btnClass="mm-popup__btn"
+    closeBtn={true}
+    closeHtml={null}
+    defaultOk="Ok"
+    defaultCancel="Cancel"
+    wildClasses={false}
+    escToClose={true} 
+    />
       </React.Fragment>
     );
   }
