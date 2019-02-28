@@ -4050,13 +4050,16 @@ componentWillUnmount() {
           <span style={{fontSize:'0.6em'}}>Block</span>
         </div>
        </div>
-      <table>
-        <tbody>             
-          {rows.map(row => {
-            return this.renderRow(row);
-          })}
-        </tbody>
-      </table>
+
+        <div style={{width:'100%',overflow:'auto'}}>
+          <table style={{width:'100%'}}>
+            <tbody>             
+              {rows.map(row => {
+                return this.renderRow(row);
+              })}
+            </tbody>
+          </table>
+        </div>
       </div>
     );
   }
