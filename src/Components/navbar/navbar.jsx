@@ -25,7 +25,7 @@ const NavBar = () => {
       <div className="container-fluid">
         <div className="row w-100">
           <div className="col-md-4">
-            <img src={AAFlag} alt="AA Flag" style={{float:'left'}}/>
+            <img src={AAFlag} alt="AA Flag" style={{float:'left', width:30, height:30}}/>
             <h4 style={{float:'left',fontFamily:'AmericanSans'}}>Standby List</h4>
           </div>
           <div className="col-md-4" id="searchBar">
@@ -63,7 +63,7 @@ const NavBar = () => {
           </div>
         </div>
 
-        <div className="row w-100" style={{marginTop:5, fontFamily:'AmericanSans'}}>
+        <div className="row w-100" style={{marginTop:7, fontFamily:'AmericanSans'}}>
           <div className="col">
             <div className="text-center">
               <button className="dropdown-toggle dropdownTabs" data-toggle="dropdown">Main</button>
