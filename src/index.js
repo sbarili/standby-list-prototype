@@ -4,8 +4,7 @@ import "./index.css";
 import App from "./app/layout/App";
 import * as serviceWorker from "./serviceWorker";
 import "bootstrap/dist/css/bootstrap.css";
-//import Counter from "./Components/counter";
-//import Counters from "./Components/counters";
+import 'bootstrap/dist/js/bootstrap.js';
 
 ReactDOM.render(<App />, document.getElementById("root"));
 
