@@ -7,10 +7,35 @@
 }
 
 .dropdownTabs {
-    background-color:#00467f;
-    border:'none';
+    background-color: #00467f;
+    border: none;
+    outline: none;
+    color: white;
 }
 
-.caret {
-    display: none;
-    }
+.dropdownTabs::after {
+    display: none !important;
+}
+
+.dropdownTabs:hover {
+    color: #00467f;
+    background-color: white;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 5px;
+}
+
+.dropdownTabs:focus {
+    outline: none;
+    border: none;
+    color: #00467f;
+    background-color: white;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 5px;
+}
+
+@font-face {
+    font-family: AmericanSans;
+    src: url(../../assets/fonts/AmericanSans-Regular.otf);
+}
