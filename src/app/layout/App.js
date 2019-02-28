@@ -1,10 +1,14 @@
 import React, { Component } from "react";
 //import logo from './logo.svg';
 //import Counters from "./Components/counters";
-import Passengers from "../../components/Passengers";
-import NavBar from "../../components/navbar";
-import Seatmap from "../../components/SeatMap";
+//import Passengers from "../../Components/Passengers";
+import NavBar from "../../Components/navbar";
+import Seatmap from "../../Components/SeatMap";
 import BootstrapTable from "react-bootstrap-table-next";
+import filterFactory, {
+  multiSelectFilter
+} from "react-bootstrap-table2-filter";
+import SampleData from "./data";
 
 import "react-bootstrap-table-next/dist/react-bootstrap-table2.min.css";
 //import Seatmap from "react-seatmap";
@@ -12,240 +16,18 @@ import "react-bootstrap-table-next/dist/react-bootstrap-table2.min.css";
 
 class App extends Component {
   state = {
-    passengers: [
-      {
-        id: 1,
-        //priorityList: 1,
-        thruStatus: "THRU",
-        bpIssued: false,
-        priorityCode: "OS",
-        nameLast: "SKYWALKER",
-        nameFirst: "LUKE",
-        groupCode: "AB4",
-        cabinBooked: "F",
-        cabinDesired: "Y",
-        destination: "TUS",
-        seatOrTransferFlight: NaN,
-        bags: "NB",
-        remarks: "FDJ AA"
-      },
-      {
-        id: 2,
-        //priorityList: 2,
-        thruStatus: "???",
-        bpIssued: true,
-        priorityCode: "OS",
-        nameLast: "ORGANA",
-        nameFirst: "LEAH",
-        groupCode: "AB4",
-        cabinBooked: "F",
-        cabinDesired: "Y",
-        destination: "TUS",
-        seatOrTransferFlight: NaN,
-        bags: "NB",
-        remarks: "CJ"
-      },
-      {
-        id: 3,
-        //priorityList: 3,
-        thruStatus: "???",
-        bpIssued: true,
-        priorityCode: "OS",
-        nameLast: "SOLO",
-        nameFirst: "HAN",
-        groupCode: "AB4",
-        cabinBooked: "F",
-        cabinDesired: "Y",
-        destination: "TUS",
-        seatOrTransferFlight: NaN,
-        bags: "NB",
-        remarks: NaN
-      },
-      {
-        id: 4,
-        //priorityList: 4,
-        thruStatus: "???",
-        bpIssued: false,
-        priorityCode: "VOL",
-        nameLast: "VADER",
-        nameFirst: "DARTH",
-        groupCode: NaN,
-        cabinBooked: "F",
-        cabinDesired: "J",
-        destination: "TUS",
-        seatOrTransferFlight: NaN,
-        bags: "NB",
-        remarks: NaN
-      },
-      {
-        id: 5,
-        //priorityList: 5,
-        thruStatus: "???",
-        bpIssued: false,
-        priorityCode: "VOL",
-        nameLast: "KENOBI",
-        nameFirst: "OBIWAN",
-        groupCode: NaN,
-        cabinBooked: "F",
-        cabinDesired: "Y",
-        destination: "TUS",
-        seatOrTransferFlight: NaN,
-        bags: "NB",
-        remarks: NaN
-      },
-      {
-        id: 6,
-        //priorityList: 6,
-        thruStatus: "???",
-        bpIssued: false,
-        priorityCode: "VOL",
-        nameLast: "WINDU",
-        nameFirst: "MACE",
-        groupCode: NaN,
-        cabinBooked: "Y",
-        cabinDesired: "J",
-        destination: "TUS",
-        seatOrTransferFlight: NaN,
-        bags: "NB",
-        remarks: NaN
-      },
-      {
-        id: 7,
-        //priorityList: 7,
-        thruStatus: "???",
-        bpIssued: false,
-        priorityCode: "VOL",
-        nameLast: "REN",
-        nameFirst: "KYLO",
-        groupCode: NaN,
-        cabinBooked: "Y",
-        cabinDesired: "Y",
-        destination: "TUS",
-        seatOrTransferFlight: NaN,
-        bags: "NB",
-        remarks: NaN
-      },
-
-      {
-        id: 8,
-        //priorityList: 8,
-        thruStatus: "???",
-        bpIssued: false,
-        priorityCode: "D1",
-        nameLast: "DAMERON",
-        nameFirst: "POE",
-        groupCode: "RR7",
-        cabinBooked: "Y",
-        cabinDesired: "F",
-        destination: "TUS",
-        seatOrTransferFlight: NaN,
-        bags: "NB",
-        remarks: NaN
-      },
-      {
-        id: 9,
-        //priorityList: 9,
-        thruStatus: "???",
-        bpIssued: false,
-        priorityCode: "D1",
-        nameLast: "COLORES",
-        nameFirst: "DAVID",
-        groupCode: NaN,
-        cabinBooked: "Y",
-        cabinDesired: "Y",
-        destination: "TUS",
-        seatOrTransferFlight: NaN,
-        bags: "NB",
-        remarks: NaN
-      },
-      {
-        id: 10,
-        //priorityList: 10,
-        thruStatus: "???",
-        bpIssued: false,
-        priorityCode: "D2",
-        nameLast: "FETT",
-        nameFirst: "BOBA",
-        groupCode: "AB5",
-        cabinBooked: "Y",
-        cabinDesired: "Y",
-        destination: "TUS",
-        seatOrTransferFlight: NaN,
-        bags: "NB",
-        remarks: NaN
-      },
-      {
-        id: 11,
-        //priorityList: 11,
-        thruStatus: "???",
-        bpIssued: false,
-        priorityCode: "D2",
-        nameLast: "FETT",
-        nameFirst: "JANGO",
-        groupCode: "AB5",
-        cabinBooked: "Y",
-        cabinDesired: "Y",
-        destination: "TUS",
-        seatOrTransferFlight: NaN,
-        bags: "NB",
-        remarks: NaN
-      },
-      {
-        id: 12,
-        //priorityList: 12,
-        thruStatus: "???",
-        bpIssued: false,
-        priorityCode: "D2",
-        nameLast: "KANATA",
-        nameFirst: "MAZ",
-        groupCode: "AB5",
-        cabinBooked: "Y",
-        cabinDesired: "Y",
-        destination: "TUS",
-        seatOrTransferFlight: NaN,
-        bags: "NB",
-        remarks: NaN
-      },
-      {
-        id: 13,
-        //priorityList: 13,
-        thruStatus: "???",
-        bpIssued: false,
-        priorityCode: "D2",
-        nameLast: "TICO",
-        nameFirst: "ROSE",
-        groupCode: "AB5",
-        cabinBooked: "Y",
-        cabinDesired: "Y",
-        destination: "TUS",
-        seatOrTransferFlight: NaN,
-        bags: "NB",
-        remarks: NaN
-      },
-      {
-        id: 14,
-       // priorityList: 14,
-        thruStatus: "???",
-        bpIssued: false,
-        priorityCode: "D2",
-        nameLast: "ERSO",
-        nameFirst: "JYN",
-        groupCode: "AB5",
-        cabinBooked: "Y",
-        cabinDesired: "Y",
-        destination: "TUS",
-        seatOrTransferFlight: NaN,
-        bags: "NB",
-        remarks: NaN
-      }
-    ]
+    columns: SampleData.columns,
+    passengers: SampleData.passengers,
+    hideOperationsBar: true
   };
 
-  // constructor() {
-  //   super();
-  //   //console.log("App - Constructor");
-  //   //this.state = this.props.something; pass props as a param to ctor and base class (super) to directly modify state
-  // }
+  constructor() {
+    super();
+    this.state.passengers = SampleData.passengers;
+    this.onClick = this.onClick.bind(this);
+    this.onMouseHover = this.onMouseHover.bind(this);
+    console.log("App - Constructor", this.state.passengers);
+  }
 
   // componentDidMount() {
   //   //Make ajax calls to get data from the server
@@ -254,7 +36,6 @@ class App extends Component {
   // }
 
   handleDelete = counterId => {
-    //console.log("Event Handler Called", counterId);
     const counters = this.state.counters.filter(c => c.id !== counterId);
     this.setState({ counters });
   };
@@ -277,34 +58,70 @@ class App extends Component {
     //console.log(this.state.counters[0]);
   };
 
+  onClick = (e, row, rowIndex) => {
+    console.log(`clicked on row with index: ${rowIndex}`);
+  };
+
+  onMouseHover = (e, row, rowIndex) => {
+    console.log(`enter on row with index: ${rowIndex}`);
+  };
+
+  hideOrShowOpsBar = () => {
+    this.setState({
+      hideOperationsBar: true
+    });
+  };
+
   render() {
-    console.log(this.state.passengers);
+    const rowStyle = { fontSize: 10 };
+    const selectRow = {
+      mode: "checkbox",
+      clickToSelect: true,
+      style: { backgroundColor: "#c8e6c9" }
+    };
+
+    // const rowEvents = {
+    //   onClick: (e, row, rowIndex) => {
+    //     console.log(`clicked on row with index: ${rowIndex}`);
+    //   },
+    // onMouseEnter: (e, row, rowIndex) => {
+    //   console.log(`enter on row with index: ${rowIndex}`);
+    // }
+    // };
+
     return (
       <React.Fragment>
         <NavBar totalCounters={this.state.passengers.length} />
-        <main className="container">
-          {/* <Counters
-            counters={this.state.counters}
-            onReset={this.handleReset}
-            onIncrement={this.handleIncrement}
-            onDelete={this.handleDelete}
-          /> */}
-          <Passengers passengers={this.state.passengers} />
-          <Seatmap />
-          {/* <Seatmap
-            rows={[
-              [
-                { number: "1A", isReserved: false },
-                { number: "1B", isReserved: false }
-              ],
-              [
-                { number: "2A", isReserved: false },
-                { number: "2B", isReserved: false }
-              ]
-            ]}
-            maxReservableSeats={3}
-            alpha
-          /> */}
+        <main className="container-fluid p-2">
+          <div className="row">
+            <div className="col-md-8">
+              {this.state.hideOperationsBar && (
+                <div>
+                  <button>Testing1</button>
+                  <button>Testing2</button>
+                  <button>Testing3</button>
+                </div>
+              )}
+              <BootstrapTable
+                keyField="id"
+                data={this.state.passengers}
+                columns={this.state.columns}
+                bordered={false}
+                selectRow={selectRow}
+                rowStyle={rowStyle}
+                headerStyle={rowStyle}
+                rowEvents={{
+                  onClick: this.onClick,
+                  onMouseEnter: this.onMouseHover
+                }}
+                filter={filterFactory()}
+                hover
+              />
+            </div>
+            <div className="col-md-4">
+              <Seatmap />
+            </div>
+          </div>
         </main>
       </React.Fragment>
     );
