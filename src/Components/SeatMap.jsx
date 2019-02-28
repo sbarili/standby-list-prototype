@@ -3924,18 +3924,46 @@ export default class Seatmap extends React.Component {
       event.preventDefault();
     if(seat.Type == SeatType.BOARDED || seat.Type == SeatType.NOTBOARDED || seat.Type == SeatType.THRU || seat.Type == SeatType.HELD)
     {
-          Popup.alert("Seat Number: " + seat.SeatNumber + " PNR: " + seat.PNR + " LastName: " + seat.LastName + " FirstName: " + seat.FirstName );
+           Popup.alert("Seat Number: " +  seat.SeatNumber + " PNR: " + seat.PNR + "         Name: " + seat.LastName + "/" + seat.FirstName  + "   Status: " + this.paxSeatStatus(seat.Type) );
+    }
+  }
+    else {    
+      if(seat.Type == SeatType.AVAILABLE || seat.Type == SeatType.BLOCKED)
+      {
+        var seatMapDetails = this.state.seatMap;
+        seatMapDetails[0].Rows[0].Seats[0].Type=SeatType.BOARDED;
+        this.setState({seatMap:seatMapDetails});
+      }
     }
        
-    }
+    
     
   }
 
   
+paxSeatStatus(type) {
+
+  if(type ==  SeatType.BLOCKED)
+    return "BLOCKED";
+  else if(type == SeatType.BOARDED)
+    return "BOARDED";
+    else if(type ==SeatType.NOTBOARDED)
+    return "NOTBOARDED";
+    else if(type ==SeatType.THRU)
+    return "THRU";
+    else if(type == SeatType.HELD)
+    return "HELD";
+    else if(type ==SeatType.AVAILABLE)
+    return "OPEN";
+    else
+    return "Default";
+  
+}
+  
   componentDidMount() {
    // document.addEventListener('contextmenu', this.handleSeatClick);
    
-};
+}
 
 componentWillUnmount() {
   //document.removeEventListener('contextmenu', this.handleSeatClick);
