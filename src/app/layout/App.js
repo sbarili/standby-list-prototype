@@ -112,6 +112,15 @@ class App extends Component {
         <main className="container-fluid p-2">
           <div className="row">
             <div className="col-md-8">
+              <div className="row">
+                <div className="col-md-4">
+                  <span style={{fontWeight:'bold',paddingLeft:10,fontSize:'1.5em',color: '#00467f'}}>Standby List</span>
+                </div>
+                <div className="col-md-8" style={{fontSize:'1.2em',color: '#00467f',paddingTop:3}}>
+                  <span style={{fontWeight:'bold'}}>Flight #:</span> 755 <span style={{fontWeight:'bold'}}>PHX-DFW</span> 9:17AM
+                </div>
+                <hr />
+              </div>
               <div className="row" style={{ height: 47 }}>
                 <Dropdown style={{ position: "absolute", right: 5 }}>
                   <Dropdown.Toggle id="dropdown-custom-1">
