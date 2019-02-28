@@ -21,16 +21,6 @@ const NavBar = () => {
     paddingLeft: 5
   };
 
-  const selectedTab = {
-    outline: 'none',
-    border: 'none',
-    color: '#00467f',
-    backgroundColor: 'white',
-    paddingLeft: 20,
-    paddingRight: 20,
-    borderRadius: 5
-  };
-
   return (
     <nav className="navbar navbar-light" style={navStyle}> 
       <div className="container-fluid">

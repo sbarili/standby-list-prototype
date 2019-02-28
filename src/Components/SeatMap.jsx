@@ -4030,23 +4030,27 @@ componentWillUnmount() {
 
     return (
      <div>
-       <table style={{width: "300px" }}>
-        <tbody>    
-         <tr>
-           <td>
-             <span style={{background:"#00ff00", color:"gray"}}>Boarded</span>
-             <span style={{background:"#ffff00", color:"gray"}}>Not Boarded</span>
-             <span style={{background:"#dc143c", color:"gray"}}>Thru</span>
-             <span style={{background:"#800080", color:"gray"}}>Held</span>
-             <span style={{background:"#191970", color:"gray"}}>Open</span>
-             <span style={{background:"#daa520", color:"gray"}}>Block</span>
-             </td>
-          
-      </tr> 
-      </tbody>
-      <br/>
-      </table>
-      <table style={{width: "300px" }}>
+       <div className="row" style={{lineHeight:'1em',paddingBottom:5}}>
+        <div className="col-sm-2 text-center" style={{background:"#00ff00", color:"#00467f",paddingBottom:5}}>
+          <span style={{fontSize:'0.6em'}}>Boarded</span>
+        </div>
+        <div className="col-sm-2 text-center" style={{background:"#ffff00", color:"#00467f",paddingBottom:5}}>
+          <span style={{fontSize:'0.6em'}}>Not Brd</span>
+        </div>
+        <div className="col-sm-2 text-center" style={{background:"#dc143c", color:"white",paddingBottom:5}}>
+          <span style={{fontSize:'0.6em'}}>Thru</span>
+        </div>
+        <div className="col-sm-2 text-center" style={{background:"#800080", color:"white",paddingBottom:5}}>
+          <span style={{fontSize:'0.6em'}}>Held</span>
+        </div>
+        <div className="col-sm-2 text-center" style={{background:"#191970", color:"white",paddingBottom:5}}>
+          <span style={{fontSize:'0.6em'}}>Open</span>
+        </div>
+        <div className="col-sm-2 text-center" style={{background:"#daa520", color:"#00467f",paddingBottom:5}}>
+          <span style={{fontSize:'0.6em'}}>Block</span>
+        </div>
+       </div>
+      <table>
         <tbody>             
           {rows.map(row => {
             return this.renderRow(row);
@@ -4059,7 +4063,7 @@ componentWillUnmount() {
 
   render() {
     return (
-      <div style={{ width: "300px" }}>
+      <div>
         {" "}
         {this.state.seatMap.map(cabin => this.renderCabin(cabin))}
         <ReactTooltip></ReactTooltip>
