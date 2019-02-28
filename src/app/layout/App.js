@@ -6,9 +6,8 @@ import NavBar from "../../Components/navbar/navbar";
 import Seatmap from "../../Components/SeatMap";
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
-import BootstrapTable from "react-bootstrap-table-next";
 import Popup from "react-popup";
-
+import BootstrapTable from "react-bootstrap-table-next";
 import "react-bootstrap-table-next/dist/react-bootstrap-table2.min.css";
 //import Seatmap from "react-seatmap";
 //import "./App.css";
@@ -303,8 +302,9 @@ class App extends Component {
     defaultOk="Ok"
     defaultCancel="Cancel"
     wildClasses={false}
-    escToClose={true} 
-    />
+    escToClose={true}  
+    
+    > <div>Popup content here !!</div></Popup>
       </React.Fragment>
     );
   }
