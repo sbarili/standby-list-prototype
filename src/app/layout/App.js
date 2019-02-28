@@ -301,8 +301,9 @@ class App extends Component {
     defaultOk="Ok"
     defaultCancel="Cancel"
     wildClasses={false}
-    escToClose={true} 
-    />
+    escToClose={true}  
+    
+    > <div>Popup content here !!</div></Popup>
       </React.Fragment>
     );
   }
