@@ -92,7 +92,7 @@ const sampleData = {
   passengers: [
     {
       id: 1,
-      bpIssued: false,
+      bpIssued: "21A",
       priorityCode: "OS",
       name: "LUKE SKYWALKER",
       groupCode: "AB4",

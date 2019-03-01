@@ -34,10 +34,10 @@
 
 hr {
   border: 0;
-  clear:both;
-  display:block;
-  width: 96%;               
-  background-color:lightgray;
+  clear: both;
+  display: block;
+  width: 96%;
+  background-color: lightgray;
   height: 1px;
   opacity: 80%;
 }

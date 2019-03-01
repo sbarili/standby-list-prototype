@@ -27,9 +27,9 @@ class App extends Component {
   constructor() {
     super();
     this.state.passengers = SampleData.passengers;
+    this.myCallback = this.myCallback.bind(this);
     this.onClick = this.onClick.bind(this);
     this.onMouseHover = this.onMouseHover.bind(this);
-    console.log("App - Constructor", this.state.passengers);
   }
 
   handleDelete = counterId => {
@@ -95,6 +95,20 @@ class App extends Component {
   //   });
   // };
 
+  myCallback = dataFromChild => {
+    console.log("callBack From Child!", { dataFromChild });
+    this.setState({ passengers: dataFromChild });
+    console.log("new state after callback: ", this.state.passengers);
+    this.forceUpdate();
+  };
+
+  // onSelect = (row, isSelect, rowIndex, e) => {
+  //   console.log(row.id);
+  //   console.log(isSelect);
+  //   console.log(rowIndex);
+  //   console.log(e);
+  // };
+
   render() {
     const rowStyle = { fontSize: 12 };
     const selectRow = {
@@ -105,6 +119,7 @@ class App extends Component {
     const hoverStyle = {
       style: { backgroundColor: "#e8e8e8" }
     };
+    console.log("passengers from main render: ", this.state.passengers);
 
     return (
       <React.Fragment>
@@ -114,10 +129,23 @@ class App extends Component {
             <div className="col-md-8">
               <div className="row">
                 <div className="col-md-4">
-                  <span style={{fontWeight:'bold',paddingLeft:10,fontSize:'1.5em',color: '#00467f'}}>Standby List</span>
+                  <span
+                    style={{
+                      fontWeight: "bold",
+                      paddingLeft: 10,
+                      fontSize: "1.5em",
+                      color: "#00467f"
+                    }}
+                  >
+                    Standby List
+                  </span>
                 </div>
-                <div className="col-md-8" style={{fontSize:'1.2em',color: '#00467f',paddingTop:3}}>
-                  <span style={{fontWeight:'bold'}}>Flight #:</span> 755 <span style={{fontWeight:'bold'}}>PHX-DFW</span> 9:17AM
+                <div
+                  className="col-md-8"
+                  style={{ fontSize: "1.2em", color: "#00467f", paddingTop: 3 }}
+                >
+                  <span style={{ fontWeight: "bold" }}>Flight #:</span> 755{" "}
+                  <span style={{ fontWeight: "bold" }}>PHX-DFW</span> 9:17AM
                 </div>
                 <hr />
               </div>
@@ -170,7 +198,11 @@ class App extends Component {
               />
             </div>
             <div className="col-md-4">
-              <Seatmap passengers={this.state.updatedPassengers} />
+              <Seatmap
+                passengers={this.state.passengers}
+                selectedPassengers={this.state.updatedPassengers}
+                callbackFromParent={this.myCallback}
+              />
             </div>
           </div>
         </main>

@@ -34,10 +34,13 @@ var SeatType = {
 
 export default class Seatmap extends React.Component {
   state = {
-    passengers: []
+    passengers: [],
+    selectedPassengers: [],
+    callbackFromParent: null
   };
   constructor(props) {
     super(props);
+    this.callbackFromParent = this.props.callbackFromParent;
 
     var seatMock = {
       Cabin: "Y",
@@ -4753,7 +4756,7 @@ export default class Seatmap extends React.Component {
       }
     } else {
       if (seat.Type == SeatType.AVAILABLE || seat.Type == SeatType.BLOCKED) {
-        var paxLst = this.props.passengers;
+        var paxLst = this.props.selectedPassengers;
         if (paxLst.length > 0) {
           var pax = paxLst[0];
 
@@ -4765,10 +4768,19 @@ export default class Seatmap extends React.Component {
             SeatType.NOTBOARDED;
           seatMapDetails[0].Rows[seat.Row - 1].Seats[seat.Col].FirstName =
             pax.name;
+          var totalPaxList = this.props.passengers;
+          totalPaxList.find(passenger => passenger.id === pax.id).bpIssued =
+            seatMapDetails[0].Rows[seat.Row - 1].Seats[seat.Col].SeatNumber;
+
           // seatMapDetails[0].Rows.find(
           //   x => x.SeatNumber === seat.SeatNumber
           // ).FirstName = pax.name;
-          this.setState({ seatMap: seatMapDetails });
+          this.setState({ seatMap: seatMapDetails, passengers: totalPaxList });
+          console.log(
+            "Updated passengers from seatmap: ",
+            this.props.passengers
+          );
+          this.callbackFromParent(this.props.passengers);
         }
       }
     }
