@@ -102,8 +102,8 @@ code {
   }
 
   .mm-popup__box {
-      width: 180px;
-      height: 180px;
+      width: 155px;
+      height: 230px;
       position: fixed;
       top: 20%;
       left: 70%;
