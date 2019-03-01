@@ -3875,10 +3875,7 @@ export default class Seatmap extends React.Component {
               Type: 18,
               Location: 24,
               Text: "RG ",
-              Price: 0.0,
-              PNR: "",
-              FirstName: "",
-              LastName: ""
+              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
             },
             {
               Cabin: 2,
@@ -3890,10 +3887,7 @@ export default class Seatmap extends React.Component {
               Type: 18,
               Location: 24,
               Text: "RGH",
-              Price: 0.0,
-              PNR: "",
-              FirstName: "",
-              LastName: ""
+              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
             },
             {
               Cabin: 2,
@@ -3905,10 +3899,7 @@ export default class Seatmap extends React.Component {
               Type: 18,
               Location: 24,
               Text: "RGH",
-              Price: 0.0,
-              PNR: "",
-              FirstName: "",
-              LastName: ""
+              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
             },
             {
               Cabin: 2,
@@ -3935,10 +3926,7 @@ export default class Seatmap extends React.Component {
               Type: 18,
               Location: 24,
               Text: "RGH",
-              Price: 0.0,
-              PNR: "",
-              FirstName: "",
-              LastName: ""
+              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
             },
             {
               Cabin: 2,
@@ -3950,10 +3938,7 @@ export default class Seatmap extends React.Component {
               Type: 18,
               Location: 24,
               Text: "RG ",
-              Price: 0.0,
-              PNR: "",
-              FirstName: "",
-              LastName: ""
+              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
             },
             {
               Cabin: 2,
@@ -4755,26 +4740,27 @@ export default class Seatmap extends React.Component {
         );
       }
     } else {
-      if (seat.Type === SeatType.AVAILABLE || seat.Type === SeatType.BLOCKED) {
-        var paxLst = this.props.passengers;
+      if (seat.Type == SeatType.AVAILABLE || seat.Type == SeatType.BLOCKED) {
+        var paxLst = this.props.selectedPassengers;
         if (paxLst.length > 0) {
-          var pax = paxLst[paxLst.length - 1];
+          var pax = paxLst[paxLst.length-1];
 
           var seatMapDetails = this.state.seatMap;
-          var existingseat = null;
+          var existingseat = null;         
           seatMapDetails[0].Rows.forEach(element => {
-            if (element.Seats.find(x => x.FirstName === pax.name) != null) {
-              existingseat = element.Seats.find(x => x.FirstName === pax.name);
-            }
-          });
-          if (existingseat != null) {
-            seatMapDetails[0].Rows[existingseat.Row - 1].Seats[
-              existingseat.Col
-            ].Type = SeatType.AVAILABLE;
-            seatMapDetails[0].Rows[existingseat.Row - 1].Seats[
-              existingseat.Col
-            ].FirstName = "";
-          }
+          
+           if( element.Seats.find(x => x.FirstName === pax.name) != null)
+          {
+            existingseat = element.Seats.find(x => x.FirstName === pax.name);
+          }            
+         }); 
+         if(existingseat!=null)
+         {
+          seatMapDetails[0].Rows[existingseat.Row - 1].Seats[existingseat.Col].Type =
+          SeatType.AVAILABLE;
+        seatMapDetails[0].Rows[existingseat.Row - 1].Seats[existingseat.Col].FirstName =
+          "";
+        }
           seatMapDetails[0].Rows[seat.Row - 1].Seats[seat.Col].Type =
             SeatType.NOTBOARDED;
           seatMapDetails[0].Rows[seat.Row - 1].Seats[seat.Col].FirstName =
@@ -4790,6 +4776,7 @@ export default class Seatmap extends React.Component {
 
           this.setState({ seatMap: seatMapDetails, passengers: totalPaxList });
           this.callbackFromParent(this.props.passengers);
+        
         }
       }
     }
