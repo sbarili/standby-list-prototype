@@ -4772,6 +4772,10 @@ export default class Seatmap extends React.Component {
           totalPaxList.find(passenger => passenger.id === pax.id).bpIssued =
             seatMapDetails[0].Rows[seat.Row - 1].Seats[seat.Col].SeatNumber;
 
+          var index = totalPaxList.findIndex(passenger => passenger.id === pax.id);
+
+          totalPaxList.splice(index, 1);
+
           // seatMapDetails[0].Rows.find(
           //   x => x.SeatNumber === seat.SeatNumber
           // ).FirstName = pax.name;
