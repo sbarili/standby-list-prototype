@@ -38,7 +38,7 @@ const NavBar = () => {
             </form>
           </div>
           <div className="col-md-4">
-            <div style={{position:'absolute',right:5,fontFamily:'AmericanSans'}}> 
+            <div style={{position:'absolute',right:5,fontFamily:'AmericanSans'}} id="profileDiv"> 
               <ul className="navbar-nav ml-auto">
                 <li className="nav-link nav-item dropdown no-arrow" style={{padding:0}}>
                   <a className="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style={{padding:0,color:'white'}}>
@@ -61,10 +61,26 @@ const NavBar = () => {
               </ul>
             </div>
 
+            <div id="smMobileTabs">
+              <div style={{textAlign:'right'}}>
+                <button className="btn btn-sm dropdown-toggle menuTab" data-toggle="dropdown" style={{backgroundColor:'#00467f'}}>
+                  <FontAwesomeIcon icon="bars" style={{color:'white',fontSize:'1.2em'}} />
+                </button>
+                <div className="dropdown-menu" style={{position:'absolute', right:5}}>
+                  <a className="dropdown-item" href="#">Main</a>
+                  <a className="dropdown-item" href="#">Boarding</a>
+                  <a className="dropdown-item" href="#">Lists</a>
+                  <a className="dropdown-item" href="#">Support</a>
+                  <a className="dropdown-item" href="#">Diversion</a>
+                  <a className="dropdown-item" href="#">IRROPS</a>
+                  <a className="dropdown-item" href="#">Flight Remarks</a>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
-        <div className="row w-100" style={{marginTop:10, fontFamily:'AmericanSans'}}>
+        <div className="row w-100" id="fullWidthTabs">
           <div className="col">
             <div className="text-center">
               <button className="dropdown-toggle dropdownTabs" data-toggle="dropdown">Main</button>
@@ -87,8 +103,8 @@ const NavBar = () => {
                 <a className="dropdown-item" href="#">Force Boarding Pass</a>
                 <a className="dropdown-item" href="#">Add/Delete SSR</a>
                 <a className="dropdown-item" href="#">FLIFO</a>
-                <a class="dropdown-item dropdown-toggle" data-toggle="dropdown" href="#">Secondary Boarding</a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <a className="dropdown-item dropdown-toggle" data-toggle="dropdown" href="#">Secondary Boarding</a>
+                <div className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                   <a className="dropdown-item" href="#">Restrict/Reopen Flight</a>
                   <a className="dropdown-item" href="#">Release PR/Held Seats</a>
                   <a className="dropdown-item" href="#">Clear Standby Pax</a>
@@ -173,6 +189,22 @@ const NavBar = () => {
                 <a className="dropdown-item" href="#">Tower</a>
                 <a className="dropdown-item" href="#">Crew Scheduled</a>
               </div>
+            </div>
+          </div>
+        </div>
+        <div className="row w-100" id="mobileTabs">
+          <div className="col-md-12" style={{textAlign:'right'}}>
+            <button className="btn btn-sm dropdown-toggle menuTab" data-toggle="dropdown" style={{backgroundColor:'#00467f'}}>
+              <FontAwesomeIcon icon="bars" style={{color:'white',fontSize:'1.2em'}} />
+            </button>
+            <div className="dropdown-menu" style={{position:'absolute', right:5}}>
+              <a className="dropdown-item" href="#">Main</a>
+              <a className="dropdown-item" href="#">Boarding</a>
+              <a className="dropdown-item" href="#">Lists</a>
+              <a className="dropdown-item" href="#">Support</a>
+              <a className="dropdown-item" href="#">Diversion</a>
+              <a className="dropdown-item" href="#">IRROPS</a>
+              <a className="dropdown-item" href="#">Flight Remarks</a>
             </div>
           </div>
         </div>

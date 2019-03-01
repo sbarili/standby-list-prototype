@@ -7,6 +7,7 @@ import NavBar from "../../Components/navbar/navbar";
 import Seatmap from "../../Components/SeatMap";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
+import { faBars } from "@fortawesome/free-solid-svg-icons";
 import Popup from "react-popup";
 import BootstrapTable from "react-bootstrap-table-next";
 import SampleData from "./data";
@@ -15,6 +16,7 @@ import "./App.css";
 import "react-bootstrap-table-next/dist/react-bootstrap-table2.min.css";
 
 library.add(faSearch);
+library.add(faBars);
 
 class App extends Component {
   state = {
