@@ -3154,10 +3154,7 @@ export default class Seatmap extends React.Component {
               Type: 18,
               Location: 24,
               Text: "RG ",
-              Price: 0.0,
-              PNR: "XYVDFR",
-              FirstName: "First",
-              LastName: "last"
+              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
             },
             {
               Cabin: 2,
@@ -3169,10 +3166,7 @@ export default class Seatmap extends React.Component {
               Type: 18,
               Location: 24,
               Text: "RGH",
-              Price: 0.0,
-              PNR: "XYVDFR",
-              FirstName: "First",
-              LastName: "last"
+              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
             },
             {
               Cabin: 2,
@@ -3184,10 +3178,7 @@ export default class Seatmap extends React.Component {
               Type: 18,
               Location: 24,
               Text: "RGH",
-              Price: 0.0,
-              PNR: "XYVDFR",
-              FirstName: "First",
-              LastName: "last"
+              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
             },
             {
               Cabin: 2,
@@ -3211,10 +3202,7 @@ export default class Seatmap extends React.Component {
               Type: 18,
               Location: 24,
               Text: "RGH",
-              Price: 0.0,
-              PNR: "XYVDFR",
-              FirstName: "First",
-              LastName: "last"
+              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
             },
             {
               Cabin: 2,
@@ -3226,10 +3214,7 @@ export default class Seatmap extends React.Component {
               Type: 18,
               Location: 24,
               Text: "RG ",
-              Price: 0.0,
-              PNR: "XYVDFR",
-              FirstName: "First",
-              LastName: "last"
+              Price: 0.0,               PNR: "",               FirstName: "",     LastName: ""             
             },
             {
               Cabin: 2,
