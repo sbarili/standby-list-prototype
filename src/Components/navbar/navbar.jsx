@@ -10,7 +10,8 @@ import { Dropdown } from "react-bootstrap";
 const NavBar = () => {
   const navStyle = {
     backgroundColor:'#00467f',
-    color: 'white'
+    color: 'white',
+    paddingBottom: 0
   };
 
   const searchStyle = {
@@ -26,7 +27,7 @@ const NavBar = () => {
         <div className="row w-100">
           <div className="col-md-4">
             <img src={AAFlag} alt="AA Flag" style={{float:'left', width:30, height:30}}/>
-            <h4 style={{float:'left',fontFamily:'AmericanSans'}}>Standby List</h4>
+            <h4 style={{float:'left',fontFamily:'AmericanSans'}}>Gate Agent</h4>
           </div>
           <div className="col-md-4" id="searchBar">
             <form className="form-inline">
@@ -63,7 +64,7 @@ const NavBar = () => {
           </div>
         </div>
 
-        <div className="row w-100" style={{marginTop:7, fontFamily:'AmericanSans'}}>
+        <div className="row w-100" style={{marginTop:10, fontFamily:'AmericanSans'}}>
           <div className="col">
             <div className="text-center">
               <button className="dropdown-toggle dropdownTabs" data-toggle="dropdown">Main</button>
@@ -78,7 +79,7 @@ const NavBar = () => {
           </div>
           <div className="col">
             <div className="text-center">
-            <button className="dropdown-toggle dropdownTabs" data-toggle="dropdown">Boarding</button>
+            <button className="dropdown-toggle boardingTab" data-toggle="dropdown">Boarding</button>
               <div className="dropdown-menu dropright">
                 <a className="dropdown-item" href="#">Child Counts</a>
                 <a className="dropdown-item" href="#">Add Bag Tag</a>
