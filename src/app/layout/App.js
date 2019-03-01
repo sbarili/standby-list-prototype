@@ -190,7 +190,7 @@ class App extends Component {
               />
             </div>
             <div className="col-md-4">
-              <Seatmap />
+              <Seatmap passengers={this.state.updatedPassengers} />
             </div>
           </div>
         </main>
