@@ -53,3 +53,52 @@
     font-family: AmericanSans;
     src: url(../../assets/fonts/AmericanSans-Regular.otf);
 }
+
+@media screen and (min-width: 807px) {
+    #fullWidthTabs {
+        margin-top:10px;
+        font-family:'AmericanSans';
+        display: inherit;
+    }
+    #mobileTabs {
+        display: none;
+    }
+    #smMobileTabs {
+        display: none;
+    }
+}
+@media screen and (max-width: 807px) {
+    #fullWidthTabs {
+        display: none;
+    }
+    #mobileTabs {
+        margin-top:10px;
+        display: inherit;
+    }
+    #mobileTabs:focus {
+        border: none;
+    }
+    .menuTab::after {
+        display:none !important;
+    }
+    #smMobileTabs {
+        display: none;
+    }
+}
+@media screen and (max-width: 769px) {
+    #fullWidthTabs {
+        display: none;
+    }
+    #mobileTabs {
+        display: none;
+    }
+    #profileDiv {
+        display: none;
+    }
+    #searchBar {
+        display: none;
+    }
+    #smMobileTabs {
+        display: inherit;
+    }
+}

@@ -102,6 +102,20 @@ code {
   border-color: #c5545c;
   color: #fff;
 }
+.mm-popup__box {
+  width: 155px;
+  height: 230px;
+  position: fixed;
+  top: 20%;
+  left: 70%;
+  margin-left: -20px;
+  background: #fff;
+  box-shadow: 0px 5px 20px 0px gray;
+  border-radius: 5px;
+  border: 2px solid #b8c8cc;
+  overflow: hidden;
+  z-index: 1001;
+}
 
 .mm-popup__box {
   width: 180px;
