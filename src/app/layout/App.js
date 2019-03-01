@@ -34,22 +34,22 @@ class App extends Component {
   }
 
   onClick = (e, row, rowIndex) => {
-    console.log(`clicked on row with index: ${rowIndex}`);
-    const id = rowIndex + 1;
-    const selectedPax = this.findArrayElementByTitle(this.state.passengers, id);
+    //const id = rowIndex + 1;
+    const selectedPax = this.state.passengers[rowIndex];
     const Passengers = this.state.updatedPassengers;
-    if (!Passengers.find(passenger => passenger.id === id)) {
+    if (!Passengers.find(passenger => passenger.id === selectedPax.id)) {
       Passengers.push(selectedPax);
       this.setState({ updatedPassengers: Passengers });
     } else {
-      var index = Passengers.findIndex(passenger => passenger.id === id);
+      var index = Passengers.findIndex(
+        passenger => passenger.id === selectedPax.id
+      );
 
       Passengers.splice(index, 1);
       this.setState({
         updatedPassengers: Passengers
       });
     }
-    console.log("updatedPassengers: ", this.state.updatedPassengers);
     if (this.state.updatedPassengers.length > 0) {
       this.setState({ showOperationsBar: true });
     } else {
@@ -67,25 +67,14 @@ class App extends Component {
     });
   };
 
-  // hideOrShowOpsBar = () => {
-  //   this.setState({
-  //     hideOperationsBar: true
-  //   });
-  // };
-
   myCallback = dataFromChild => {
-    console.log("callBack From Child!", { dataFromChild });
-    this.setState({ passengers: dataFromChild });
-    console.log("new state after callback: ", this.state.passengers);
-    this.forceUpdate();
+    this.setState({
+      showOperationsBar: false,
+      updatedPassengers: [],
+      passengers: dataFromChild
+    });
   };
 
-  // onSelect = (row, isSelect, rowIndex, e) => {
-  //   console.log(row.id);
-  //   console.log(isSelect);
-  //   console.log(rowIndex);
-  //   console.log(e);
-  // };
   onFilterChange = event => {
     const selectedValue = event.target.value;
     const fullPaxList = SampleData.passengers;
@@ -144,7 +133,6 @@ class App extends Component {
     const hoverStyle = {
       style: { backgroundColor: "#e8e8e8" }
     };
-    console.log("passengers from main render: ", this.state.passengers);
 
     return (
       <React.Fragment>
