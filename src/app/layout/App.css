@@ -39,7 +39,18 @@ hr {
   width: 96%;               
   background-color:lightgray;
   height: 1px;
-  opacity: 80%;
+  opacity: 50%;
+}
+
+.filterSelect {
+  position: absolute; 
+  right:5px;
+  background-color:lightgray;
+  border-radius:5px;
+}
+
+.filterSelect:focus {
+  outline:none;
 }
 
 @keyframes App-logo-spin {

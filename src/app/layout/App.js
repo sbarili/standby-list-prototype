@@ -21,7 +21,8 @@ class App extends Component {
     columns: SampleData.columns,
     passengers: SampleData.passengers,
     showOperationsBar: false,
-    updatedPassengers: []
+    updatedPassengers: [],
+    filterValue: "all"
   };
 
   constructor() {
@@ -31,29 +32,6 @@ class App extends Component {
     this.onMouseHover = this.onMouseHover.bind(this);
     console.log("App - Constructor", this.state.passengers);
   }
-
-  handleDelete = counterId => {
-    const counters = this.state.counters.filter(c => c.id !== counterId);
-    this.setState({ counters });
-  };
-
-  handleReset = () => {
-    const counters = this.state.counters.map(c => {
-      c.value = 0;
-      return c;
-    });
-    this.setState({ counters });
-  };
-
-  handleIncrement = counter => {
-    //console.log(counter)
-    const counters = [...this.state.counters];
-    const index = counters.indexOf(counter);
-    counters[index] = { ...counter };
-    counters[index].value++;
-    this.setState({ counters });
-    //console.log(this.state.counters[0]);
-  };
 
   onClick = (e, row, rowIndex) => {
     console.log(`clicked on row with index: ${rowIndex}`);
@@ -95,6 +73,51 @@ class App extends Component {
   //   });
   // };
 
+  onFilterChange = (event) => {
+    const selectedValue = event.target.value;
+    const fullPaxList = SampleData.passengers;
+    const nonRevValues = ['D1','D1T','D2','D2T','D3','D3T'];
+    let filteredPaxList = [];
+
+    switch (selectedValue) {
+      case 'os':
+        fullPaxList.forEach(function(pax){
+          if (pax.priorityCode === 'OS') {
+            filteredPaxList.push(pax);
+          }
+        });
+        break;
+      case 'vol':
+        fullPaxList.forEach(function(pax){
+          if (pax.priorityCode === 'VOL') {
+            filteredPaxList.push(pax);
+          }
+        });
+        break;
+      case 'nonRev':
+        fullPaxList.forEach(function(pax){
+          nonRevValues.forEach(function(value){
+            if (pax.priorityCode === value) {
+              filteredPaxList.push(pax);
+            }
+          });
+        });
+        break;
+      case 'unAcc':
+        fullPaxList.forEach(function(pax){
+          if (pax.bpIssued === null) {
+            filteredPaxList.push(pax);
+          }
+        });
+        break;
+      default:
+        filteredPaxList = SampleData.passengers;
+        break;
+    }
+
+    this.setState({filterValue: event.target.value, passengers: filteredPaxList});
+  };
+
   render() {
     const rowStyle = { fontSize: 12 };
     const selectRow = {
@@ -122,16 +145,13 @@ class App extends Component {
                 <hr />
               </div>
               <div className="row" style={{ height: 47 }}>
-                <Dropdown style={{ position: "absolute", right: 5 }}>
-                  <Dropdown.Toggle id="dropdown-custom-1">
-                    Filter
-                  </Dropdown.Toggle>
-                  <Dropdown.Menu className="super-colors">
-                    <Dropdown.Item eventKey="1">OS</Dropdown.Item>
-                    <Dropdown.Item eventKey="2">VOL</Dropdown.Item>
-                    <Dropdown.Item eventKey="3">NONREVENUE</Dropdown.Item>
-                  </Dropdown.Menu>
-                </Dropdown>
+                <select id="filterSelect" className="filterSelect" onChange={this.onFilterChange} value={this.state.filterValue}>
+                  <option value="all">Show All</option>
+                  <option value="os">OS</option>
+                  <option value="vol">VOL</option>
+                  <option value="nonRev">Non Revenue</option>
+                  <option value="unAcc">Unaccommodated</option>
+                </select>
                 {this.state.showOperationsBar && (
                   <div style={{ paddingLeft: 5 }}>
                     <button className="btn btn-primary btn-sm m-2 AppButtonStyling">
