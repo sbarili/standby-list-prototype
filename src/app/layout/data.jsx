@@ -7,7 +7,7 @@ import filterFactory, {
 
 function headerTextFormatter(column, colIndex) {
   return (
-    <div className="AppStandbyList" style={{ fontSize: 14 }}>
+    <div className="AppStandbyList" style={{ fontSize: 16 }}>
       <strong>{column.text}</strong>
     </div>
   );
@@ -31,6 +31,7 @@ const sampleData = {
 
     {
       dataField: "name",
+      width: 1,
       text: "Name",
       sort: true,
       headerFormatter: headerTextFormatter
@@ -54,7 +55,7 @@ const sampleData = {
     // },
     {
       dataField: "groupCode",
-      text: "Group Code",
+      text: "Group",
       sort: true,
       headerFormatter: headerTextFormatter
     },
@@ -92,7 +93,7 @@ const sampleData = {
   passengers: [
     {
       id: 1,
-      bpIssued: "21A",
+      bpIssued: "",
       priorityCode: "OS",
       name: "LUKE SKYWALKER",
       groupCode: "AB4",
@@ -105,7 +106,7 @@ const sampleData = {
     },
     {
       id: 2,
-      bpIssued: true,
+      bpIssued: "",
       priorityCode: "OS",
       name: "LEAH ORGANA",
       groupCode: "AB4",
@@ -119,7 +120,7 @@ const sampleData = {
     {
       id: 3,
       //priorityList: 3,
-      bpIssued: true,
+      bpIssued: "",
       priorityCode: "OS",
       name: "HAN SOLO",
       groupCode: "AB4",
@@ -133,7 +134,7 @@ const sampleData = {
     {
       id: 4,
       //priorityList: 4,
-      bpIssued: false,
+      bpIssued: "",
       priorityCode: "VOL",
       name: "DARTH VADER",
       groupCode: NaN,
@@ -147,7 +148,7 @@ const sampleData = {
     {
       id: 5,
       //priorityList: 5,
-      bpIssued: false,
+      bpIssued: "",
       priorityCode: "VOL",
       name: "OBIWAN KENOBI",
       groupCode: NaN,
@@ -161,7 +162,7 @@ const sampleData = {
     {
       id: 6,
       //priorityList: 6,
-      bpIssued: false,
+      bpIssued: "",
       priorityCode: "VOL",
       name: "MACE WINDU",
       groupCode: NaN,
@@ -175,7 +176,7 @@ const sampleData = {
     {
       id: 7,
       //priorityList: 7,
-      bpIssued: false,
+      bpIssued: "",
       priorityCode: "VOL",
       name: "KYLO REN",
       groupCode: NaN,
@@ -190,7 +191,7 @@ const sampleData = {
     {
       id: 8,
       //priorityList: 8,
-      bpIssued: false,
+      bpIssued: "",
       priorityCode: "D1",
       name: "POE DAMERON",
       groupCode: "RR7",
@@ -204,7 +205,7 @@ const sampleData = {
     {
       id: 9,
       //priorityList: 9,
-      bpIssued: false,
+      bpIssued: "",
       priorityCode: "D1",
       name: "DARTH MAUL",
       groupCode: NaN,
@@ -218,7 +219,7 @@ const sampleData = {
     {
       id: 10,
       //priorityList: 10,
-      bpIssued: false,
+      bpIssued: "",
       priorityCode: "D2",
       name: "BOBA FETT",
       groupCode: "AB5",
@@ -232,7 +233,7 @@ const sampleData = {
     {
       id: 11,
       //priorityList: 11,
-      bpIssued: false,
+      bpIssued: "",
       priorityCode: "D2",
       name: "JANGO FETT",
       groupCode: "AB5",
@@ -246,7 +247,7 @@ const sampleData = {
     {
       id: 12,
       //priorityList: 12,
-      bpIssued: false,
+      bpIssued: "",
       priorityCode: "D2",
       name: "MAZ KANATA",
       groupCode: "AB5",
@@ -260,7 +261,7 @@ const sampleData = {
     {
       id: 13,
       //priorityList: 13,
-      bpIssued: false,
+      bpIssued: "",
       priorityCode: "D2",
       name: "ROSE TICO",
       groupCode: "AB5",
@@ -274,7 +275,7 @@ const sampleData = {
     {
       id: 14,
       // priorityList: 14,
-      bpIssued: false,
+      bpIssued: "",
       priorityCode: "D2",
       name: "JYN ERSO",
       groupCode: "AB5",

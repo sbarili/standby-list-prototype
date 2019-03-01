@@ -124,7 +124,7 @@ class App extends Component {
   };
 
   render() {
-    const rowStyle = { fontSize: 12 };
+    const rowStyle = { fontSize: 14 };
     const selectRow = {
       mode: "checkbox",
       clickToSelect: true,
@@ -139,7 +139,7 @@ class App extends Component {
         <NavBar totalCounters={this.state.passengers.length} />
         <main className="container-fluid p-2">
           <div className="row">
-            <div className="col-md-8">
+            <div className="col-md-8 columnScroll">
               <div className="row">
                 <div className="col-md-4">
                   <span
@@ -212,7 +212,7 @@ class App extends Component {
                 hover={hoverStyle}
               />
             </div>
-            <div className="col-md-4">
+            <div className="col-md-4 columnScroll" style={{ paddingTop: 15 }}>
               <Seatmap
                 passengers={this.state.passengers}
                 selectedPassengers={this.state.updatedPassengers}

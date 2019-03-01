@@ -31,6 +31,14 @@
   background-color: #00467f !important;
   color: white !important;
 }
+.card-body {
+  border-radius: 4px;
+}
+
+.columnScroll {
+  height: 620px;
+  overflow-y: scroll;
+}
 
 hr {
   border: 0;
@@ -43,14 +51,14 @@ hr {
 }
 
 .filterSelect {
-  position: absolute; 
-  right:5px;
-  background-color:lightgray;
-  border-radius:5px;
+  position: absolute;
+  right: 5px;
+  background-color: lightgray;
+  border-radius: 5px;
 }
 
 .filterSelect:focus {
-  outline:none;
+  outline: none;
 }
 
 @keyframes App-logo-spin {
