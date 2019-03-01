@@ -4753,17 +4753,20 @@ export default class Seatmap extends React.Component {
          }); 
          if(existingseat!=null)
          {
-          seatMapDetails[0].Rows[existingseat.Row - 1].Seats[existingseat.Col].Type =
-          SeatType.AVAILABLE;
-        seatMapDetails[0].Rows[existingseat.Row - 1].Seats[existingseat.Col].FirstName =
-          "";
+           Popup.alert("Seat " + existingseat.SeatNumber +  " aleady assigned to passenger " + pax.name)
+        //   seatMapDetails[0].Rows[existingseat.Row - 1].Seats[existingseat.Col].Type =
+        //   SeatType.AVAILABLE;
+        // seatMapDetails[0].Rows[existingseat.Row - 1].Seats[existingseat.Col].FirstName =
+        //   "";
         }
+        else{
           seatMapDetails[0].Rows[seat.Row - 1].Seats[seat.Col].Type =
             SeatType.NOTBOARDED;
           seatMapDetails[0].Rows[seat.Row - 1].Seats[seat.Col].FirstName =
             pax.name;
          
           this.setState({ seatMap: seatMapDetails });
+        }
         
         }
       }
