@@ -4740,27 +4740,31 @@ export default class Seatmap extends React.Component {
       if (seat.Type === SeatType.AVAILABLE || seat.Type === SeatType.BLOCKED) {
         var paxLst = this.props.passengers;
         if (paxLst.length > 0) {
-          var pax = paxLst[0];
+          var pax = paxLst[paxLst.length-1];
 
           var seatMapDetails = this.state.seatMap;
-          var exists = false;
+          var existingseat = null;         
           seatMapDetails[0].Rows.forEach(element => {
           
-           if(element.Seats.find(x => x.FirstName === pax.name) != null)
-           {
-             Popup.alert("Seat Already assigned to " + pax.name);
-             exists = true;;
-           }
+           if( element.Seats.find(x => x.FirstName === pax.name) != null)
+          {
+            existingseat = element.Seats.find(x => x.FirstName === pax.name);
+          }            
          }); 
-        if(!exists)
-        {
+         if(existingseat!=null)
+         {
+          seatMapDetails[0].Rows[existingseat.Row - 1].Seats[existingseat.Col].Type =
+          SeatType.AVAILABLE;
+        seatMapDetails[0].Rows[existingseat.Row - 1].Seats[existingseat.Col].FirstName =
+          "";
+        }
           seatMapDetails[0].Rows[seat.Row - 1].Seats[seat.Col].Type =
             SeatType.NOTBOARDED;
           seatMapDetails[0].Rows[seat.Row - 1].Seats[seat.Col].FirstName =
             pax.name;
          
           this.setState({ seatMap: seatMapDetails });
-        }
+        
         }
       }
     }
