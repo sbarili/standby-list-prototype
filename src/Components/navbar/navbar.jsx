@@ -61,7 +61,7 @@ const NavBar = () => {
               </ul>
             </div>
 
-            <div id="smMobileTabs">
+            <div id="smMobileTabs" style={{position:'absolute', right:5,top:-39}}>
               <div style={{textAlign:'right'}}>
                 <button className="btn btn-sm dropdown-toggle menuTab" data-toggle="dropdown" style={{backgroundColor:'#00467f'}}>
                   <FontAwesomeIcon icon="bars" style={{color:'white',fontSize:'1.2em'}} />
