@@ -4737,23 +4737,30 @@ export default class Seatmap extends React.Component {
         );
       }
     } else {
-      if (seat.Type == SeatType.AVAILABLE || seat.Type == SeatType.BLOCKED) {
+      if (seat.Type === SeatType.AVAILABLE || seat.Type === SeatType.BLOCKED) {
         var paxLst = this.props.passengers;
         if (paxLst.length > 0) {
           var pax = paxLst[0];
 
           var seatMapDetails = this.state.seatMap;
-          // seatMapDetails[0].Rows.find(
-          //   x => x.SeatNumber === seat.SeatNumber
-          // ).Type = SeatType.BOARDED;
+          var exists = false;
+          seatMapDetails[0].Rows.forEach(element => {
+          
+           if(element.Seats.find(x => x.FirstName === pax.name) != null)
+           {
+             Popup.alert("Seat Already assigned to " + pax.name);
+             exists = true;;
+           }
+         }); 
+        if(!exists)
+        {
           seatMapDetails[0].Rows[seat.Row - 1].Seats[seat.Col].Type =
             SeatType.NOTBOARDED;
           seatMapDetails[0].Rows[seat.Row - 1].Seats[seat.Col].FirstName =
             pax.name;
-          // seatMapDetails[0].Rows.find(
-          //   x => x.SeatNumber === seat.SeatNumber
-          // ).FirstName = pax.name;
+         
           this.setState({ seatMap: seatMapDetails });
+        }
         }
       }
     }
