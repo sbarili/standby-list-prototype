@@ -4,6 +4,59 @@ import { findDOMNode } from "react-dom";
 import ReactTooltip from "react-tooltip";
 import Popup from "react-popup";
 
+class Prompt extends React.Component {
+  constructor(props) {
+      super(props);
+  }
+  
+  render() {
+      return <div><table>
+        <tr>
+          <td><b>Seat:</b></td>
+          <td>{this.props.seatNumber}</td>
+        </tr>
+        <tr>
+          <td><b>PNR:</b></td>
+          <td>{this.props.pnr}</td>
+        </tr>
+        <tr>
+          <td><b>Name:</b></td>
+          <td>{this.props.name}</td>
+        </tr>
+        <tr>
+          <td><b>Bag:</b></td>
+          <td>{this.props.bag}</td>
+        </tr>
+        <tr>
+          <td><b>SSR:</b></td>
+          <td>{this.props.SSR}</td>
+        </tr>
+      </table> </div>
+   
+  }
+}
+/** Prompt plugin */
+Popup.registerPlugin('prompt', function (seatNumber, pnr, name, status,bag, SSR , target, callback) {  
+
+  this.create({
+      title: 'Seat Details',
+      content: <Prompt seatNumber={seatNumber} pnr={pnr} name ={name} status = {status} bag={bag} SSR = {SSR} />,
+      position: function (box) {
+        let bodyRect      = document.body.getBoundingClientRect();
+        let btnRect       = target.getBoundingClientRect();
+        let btnOffsetTop  = btnRect.top - bodyRect.top;
+        let btnOffsetLeft = btnRect.left - bodyRect.left;
+        let scroll        = document.documentElement.scrollTop || document.body.scrollTop;
+
+        box.style.top  = (btnOffsetTop - box.offsetHeight - 10) - scroll + 'px';
+        box.style.left = (btnOffsetLeft + (target.offsetWidth / 2) - (box.offsetWidth / 2)) + 'px';
+        box.style.margin = 0;
+        box.style.opacity = 1;
+    }
+  });
+});
+
+
 var SeatType = {
   ASSIGNED: 1,
   LAV: 2,
@@ -4740,19 +4793,16 @@ export default class Seatmap extends React.Component {
         seat.Type == SeatType.NOTBOARDED ||
         seat.Type == SeatType.THRU ||
         seat.Type == SeatType.HELD
-      ) {
-        Popup.alert(
-          " Seat No: " +
-            seat.SeatNumber +
-            "  PNR:     " +
-            seat.PNR +
-            " Name: " +
-            seat.FirstName +
-            "   Status: " +
-            this.paxSeatStatus(seat.Type) +
-            "  Bag: AA166740" +
-            " SSR: WCHR DEAF UMNR"
-        );
+      ) {      
+        Popup.plugins().prompt(
+            seat.SeatNumber ,           
+            seat.PNR ,
+            seat.FirstName ,
+            this.paxSeatStatus(seat.Type),
+            "AA166740" ,
+            " WCHR DEAF", event.target,function (value) {
+         
+      });
       }
     } else {
       if (seat.Type == SeatType.AVAILABLE || seat.Type == SeatType.BLOCKED) {
@@ -4946,7 +4996,7 @@ export default class Seatmap extends React.Component {
       <div>
         {" "}
         {this.state.seatMap.map(cabin => this.renderCabin(cabin))}
-        <ReactTooltip />
+        <p data-tip="<span>HTML tooltip</span>" data-html={true}></p> or <ReactTooltip html={true} border="12G" />
       </div>
     );
   }
